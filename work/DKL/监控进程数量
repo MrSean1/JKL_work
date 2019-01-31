@@ -1,0 +1,28 @@
+
+process = os.popen('ps -f -C python').read().split('\n')[1:-1]
+process_short = [pr.split(' -u ')[1] for pr in process]
+number_process = len(process_short)
+report_balance_flag = False
+# check_balance_coinx()
+
+while True:
+    # if int(time.strftime('%M')) in [0]:
+    #     check_balance_coinx()
+    a = os.popen('ps -f -C python').read().split('\n')[1:-1]
+    b = [pr.split(' -u ')[1] for pr in a]
+    print(time.asctime())
+    print(len(b))
+    if len(set(process_short).difference(set(b))) != 0:
+        msg = MIMEText('有' + str(number_process - len(b)) + '个进程被意外关闭，当前为' + str(len(b)) + '个
+\n被关闭的进程为'
+                       + str(set(process_short).difference(set(b))) + '\n')
+        msg['Subject'] = '进程数量警告'
+        send_email(msg, to_xl)
+        send_email(msg, to_ht)
+    number_process = len(b)
+    process_short = list(b)
+    # balance_bin = check_balance_binance()
+    # balance_cw = check_balance_coinw()
+    # balance_huobi = check_balance_huobi()
+    time.sleep(55)
+            

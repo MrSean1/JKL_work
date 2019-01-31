@@ -1,0 +1,124 @@
+# 处理rest接口访问
+import requests
+# 判断交易时间
+import datetime
+# 进行可能的相关数据分析
+import numpy as np
+import pandas as pd
+import time
+from threading import Thread
+
+from Account import Account
+
+import logging
+
+
+# p = {
+#     "userId": "73883669",
+#     "accNo": "73883669",
+#     "host": "f1.xyzq.com.hk",
+#     "appId": "XYZQ",
+#     "licence": "8871B82FB6233160",
+#     "password": "qq010203"
+# }
+# ret=requests.post("http://bxx.pub/addUser",json=p)
+
+
+def setup_logger():
+    # Prints logger info to terminal
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    ch = logging.StreamHandler()
+    # create formatter
+    formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+    # add formatter to ch
+    ch.setFormatter(formatter)
+    logger.addHandler(ch)
+    return logger
+
+
+logger = setup_logger()
+logger.setLevel(logging.INFO)
+
+# prodcut_dict = ["YMZ8", "HSIZ8", "SSIH9"]
+prodcut_dict = ["YMZ8", "HSIZ8", "SSIH9", 'HOK9']
+
+
+# 主账户类
+# 需要从主账户获取各种信号
+class MainAccount(Account):
+    def __init__(self, account):
+        Account.__init__(self, account)
+        self.latest_trade_time = datetime.datetime.now()
+
+    def check_update(self):
+        new_l = self.get_trade_order()
+        if len(new_l) == 0 or new_l == '系统没有成交单':
+            self.logger.info("no order today")
+            return False
+        for dic in new_l:
+            dic["tradeTime"] = datetime.datetime.strptime(dic["tradeTime"], "%Y-%m-%d %H:%M:%S")
+        lt = new_l[-1]["tradeTime"]
+        self.logger.info("latest trade time is " + str(datetime.datetime.strftime(lt, "%Y-%m-%d %H:%M:%S")))
+        l = [dic for dic in new_l if dic["tradeTime"] > self.latest_trade_time]
+        if len(l) == 0:
+            return False
+        self.latest_trade_time = lt
+        self.logger.warning("new trade orders coming")
+        m_price = dict()
+        d_pos = dict()
+        pos = dict()
+        old_pos = dict(self.pos)
+        dec_dic = {'HO': 4, 'HSI': 0, 'SSI': 0, 'YM': 0}
+        for prod in prodcut_dict:
+            count = 0
+            price = 0
+            if len(set([i['buySell'] for i in l if prod == i['prodCode']])) < 2:
+                for order in l:
+                    if prod == order['prodCode']:
+                        count += 1
+                        if order['buySell'] == 'buy':
+                            try:
+                                d_pos[prod] += order['qty']
+                            except KeyError:
+                                d_pos[prod] = 0
+                                d_pos[prod] += order['qty']
+                            try:
+                                pos[prod] += order['qty']
+                                self.pos[prod]['q'] += order['qty']
+                            except KeyError:
+                                pos[prod] = old_pos[prod]['q']
+                                pos[prod] += order['qty']
+                                self.pos[prod]['q'] += order['qty']
+                        elif order['buySell'] == 'sell':
+                            try:
+                                d_pos[prod] -= order['qty']
+                            except KeyError:
+                                d_pos[prod] = 0
+                                d_pos[prod] -= order['qty']
+                            try:
+                                pos[prod] -= order['qty']
+                                self.pos[prod]['q'] -= order['qty']
+                            except KeyError:
+                                pos[prod] = old_pos[prod]['q']
+                                pos[prod] -= order['qty']
+                                self.pos[prod]['q'] -= order['qty']
+                        price += order['price']
+                if count is 0 and price is not 0:
+                    if dec_dic[prod[0:-2]] == 0:
+                        m_price[prod] = int(round(price/1, dec_dic[prod[0:-2]]))
+                    else:
+                        m_price[prod] = round(price / 1, dec_dic[prod[0:-2]])
+                elif count is not 0:
+                    if dec_dic[prod[0:-2]] == 0:
+                        m_price[prod] = int(round(price/count, dec_dic[prod[0:-2]]))
+                    else:
+                        m_price[prod] = round(price / count, dec_dic[prod[0:-2]])
+            else:
+                self.logger.warning('orders to buy and sell in same products')
+                self.check_all_position()
+        if not m_price and not d_pos and not pos:
+            return False
+        self.logger.warning(
+            "mean price: " + str(m_price) + " position difference: " + str(d_pos) + "position " + str(pos))
+        return m_price, d_pos, pos

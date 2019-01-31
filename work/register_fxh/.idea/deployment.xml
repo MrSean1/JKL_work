@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="haitao@47.75.201.103:22 (2)">
+    <serverData>
+      <paths name="haitao@47.75.201.103:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/../bitmex/bitmex_roobt" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="haitao@47.75.201.103:22 (1)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/pycharm_project_287" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="haitao@47.75.201.103:22 (2)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/haitao/test" local="$PROJECT_DIR$/../server" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

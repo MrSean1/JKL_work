@@ -1,0 +1,9 @@
+http://mirrors.ustc.edu.cn/			Ubuntu 镜像下载地址
+service-robot.coinfly.com
+192
+om
+192.168.0.29   内   内网解析
+解析
+47.75.215.72   公   公网解析
+
+暂时不要开，还没好！

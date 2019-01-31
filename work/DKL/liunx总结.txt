@@ -1,0 +1,72 @@
+服务器地址：
+	用户名：haitao
+	密码：SVecHw0TuZyahNgI
+	服务器地址：47.75.201.103
+
+阿里云远程连接密码：
+	 444755
+	
+linux 命令：
+	启动脚本文件
+	nohup python -u monitor.py > test.log &
+	查看日志
+	tail -f test.log
+	查看当前python运行的进程
+	ps -ef|grep 'python'
+
+
+python修改系统导包路径：
+	In [3]: sys.path
+	Out[3]: 
+		['',
+		 '/home/haitao/anaconda3/bin',
+		 '/home/haitao/anaconda3/lib/python36.zip',
+		 '/home/haitao/anaconda3/lib/python3.6',
+		 '/home/haitao/anaconda3/lib/python3.6/lib-dynload',
+		 '/home/haitao/anaconda3/lib/python3.6/site-packages',
+		 '/home/haitao/anaconda3/lib/python3.6/site-packages/IPython/extensions',
+		 '/home/haitao/.ipython']
+		 # 通过此查找系统导包路径   
+	cd /home/haitao/anaconda3/lib/python3.6/site-packages
+	# 进入到此路径后找到
+	vim mypkpath.pth
+	# 再此文件夹中，添加自己的创建包的路径，不然系统找不到
+
+只是创建虚拟环境的方法太多，我给搞了一上午才明白有virtualenv,  pyenv virtualenv  还有pycharm自带的自动创建的env
+
+with open('wang.txt', 'r+', encoding='UTF-8') as f:
+    message = f.read()
+读取文件信息 
+re.compile(r'\w*\交易所', message)  	正则匹配交易所
+a = rr.findall(message)		获取匹配得列表
+
+
+bids 
+asks 
+
+
+
+1	19409
+2	5706
+3	4255
+4	9875
+5	7697
+6	14414
+7	12364
+8	5134
+9	3373
+10	8223
+11	13242
+12	450
+13	83
+14	15996
+15	13342
+16	4108
+17	7122
+18	12679
+19	4502
+20	18558
+21	11547
+
+
+

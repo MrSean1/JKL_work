@@ -1,0 +1,6 @@
+git 操作总结：
+	在本地新建test分支并推送到远程：
+	git checkout -b test
+	git push origin test   
+	
+	git checkout -b dev 新建并切换到本地dev分支

@@ -1,0 +1,169 @@
+常用网址：
+	
+	www.hbank.pro			hbank
+	www.dappex.net			dapp
+	www.ttex.pro			天天
+	www.bxx.com				bxx
+	test-www.coinx.im			coinx
+	bxx.com					bxx
+	https://www.coinfly.com		coinfly
+	
+	
+47.52.243.235 service-robot.bxx.com
+192.168.0.29 service-robot.coinfly.com
+192.168.0.70 service-robot.coinx.im
+192.168.0.28 service-robot.dappex.net
+192.168.0.76 service-robot.gt210.net
+192.168.0.1 service-robot.ttex.pro
+
+
+47.52.243.235 service-robot.bxx.com
+192.168.0.29 service-robot.coinfly.com
+192.168.0.70 service-robot.coinx.im
+192.168.0.28 service-robot.dappex.net
+192.168.0.76 service-robot.gt210.net
+192.168.0.1 service-robot.ttex.pro
+
+
+交易金额参考网站：
+	第一	www.hbg.com 			huobi
+	第二	www.binance.co			币安
+	第三	www.hadax.com			HADAX
+	第四	www.coinw.me			币赢
+	
+写过请求的网站：
+	www.okb.com 			okex
+	www.zb.cn				zb
+	www.binance.co			binance
+	
+bitmex:
+	key = ['6jOxgwVwabghW2RzkFJ5XoWI', 'X2Gfkbd3RFiXzDtQ5ei8B9zJF8RwjW8Ey1tyzMZ22XwBLlkz']
+	ws1 = BitMEXWebsocket(endpoint="wss://www.bitmex.com/realtime", symbol='XBTUSD', api_key=key[0], api_secret=key[1])
+	
+	
+BXXapi文档地址：
+	market_root ： http://47.75.168.8:7076/swagger-ui.html
+	account_root： http://47.75.168.8:7072/swagger-ui.html
+
+BXX KEY:
+	API KEY:		TENbxEl5BSy9nhfk
+	API Secret:	gux5Orrtnykp7g0tlJt5GfTXQRW0I9
+
+huobi KEY：
+	Access Key 		5c857632-23a0a848-5948e573-c39a8
+	Secret Key		20f02610-1623ff8f-98731f9b-2ca99
+
+bitMex ：
+	ID：	bIg0PLqEuxjsImhqwUy-Wu0e
+	密钥：	1H0Cb9rjndACfQPDzg5CNxiGt97aZsnrkAo5xp824qP1AElr
+
+OKEX
+    api_key = 'c1544cb7-0ad0-49c7-8beb-21aad8a850c4'
+    secret_key = "2ED7BCD47841A12BAE24E869938D2CD9"
+	
+码云地址：
+	https://gitee.com/haitaoyan
+git  项目管理包地址：
+	http://119.23.44.193/quant/package
+
+阿里云：
+	AppKey：25257944     AppSecret：2f45bdb4ef7d5224cf8c2eb344ac0b58 复制
+	AppCode：69fa8ecef98645a4aa7aec4e07e7a089复制重置
+
+	
+qq 邮箱：
+	开启POP3/SMTP
+	riaclutbmbfbbjcg
+	开启IMAP/SMTP
+	agagwzladccqbhce
+	
+交易队列： BXX系类：
+ttex.pro
+	[['TTEX', ['BTC', 'USDT']], ['TTEX', ['ETH', 'USDT']],
+     ['TTEX', ['BTM', 'USDT']], ['TTEX', ['REP', 'USDT']],
+     ['TTEX', ['ETH', 'BTC']], ['TTEX', ['OMG', 'BTC']], ['TTEX', ['AE', 'BTC']], ['TTEX', ['BTM', 'BTC']],
+	 ['TTEX', ['ZRX', 'BTC']], ['TTEX', ['ZIL', 'BTC']], ['TTEX', ['BAT', 'BTC']], ['TTEX', ['ICX', 'BTC']],
+	 ['TTEX', ['REP', 'BTC']], ['TTEX', ['WTC', 'BTC']], ['TTEX', ['GNT', 'BTC']],
+     ['TTEX', ['BTM', 'ETH']], ['TTEX', ['OMG', 'ETH']], ['TTEX', ['AE', 'ETH']], ['TTEX', ['REP', 'ETH']], ]
+	 
+没有了
+# dappex.com	
+# 	[['DAPP', ['BTC', 'USDT']], ['DAPP', ['ETH', 'USDT']], ['DAPP', ['AE','USDT']],
+#    ['DAPP', ['OMG', 'USDT']], ['DAPP', ['ZRX', 'USDT']], 
+# 	 ['DAPP', ['ICX', 'USDT']], ['DAPP', ['BTM', 'USDT']], 
+# 	 ['DAPP', ['BAT', 'USDT']],['DAPP', ['DGD', 'USDT']],
+#    ['DAPP', ['ETH', 'BTC']],['DAPP', ['REP', 'BTC']],
+#    ['DAPP', ['DGD', 'ETH']], ['DAPP', ['ICX', 'ETH']],
+# 	 ['DAPP', ['ZRX', 'ETH']],['DAPP', ['REP', 'ETH']],]
+
+BXX:
+	[['BXX', ['BTC', 'USDT']], ['BXX', ['ETH', 'USDT']], 
+     ['BXX', ['OMG', 'USDT']], ['BXX', ['ZIL', 'USDT']], ['BXX', ['NBXX', 'USDT']], 
+     ['BXX', ['ETH', 'BTC']], ['BXX', ['AE', 'BTC']], ['BXX', ['ICX', 'BTC']], 
+	 ['BXX', ['REP', 'BTC']], ['BXX', ['NBXX', 'BTC']],
+     ['BXX', ['OMG', 'ETH']], ['BXX', ['AE', 'ETH']],  ['BXX', ['NBXX', 'ETH']],
+	 ['BXX', ['ICX', 'ETH']], ['BXX', ['REP', 'ETH']], ]
+# COINFLY:
+# 	[['COINFLY', ['BTC', 'USDT']], ['COINFLY', ['ETH', 'USDT']], 
+#    ['COINFLY', ['ETH', 'BTC']],  ['COINFLY', ['AE', 'BTC']], 
+#	 ['COINFLY', ['OMG', 'BTC']],  ['COINFLY', ['ZRX', 'BTC']], ['COINFLY', ['ICX', 'BTC']],
+#	 ['COINFLY', ['BTM', 'BTC']],  ['COINFLY', ['BAT', 'BTC']], ['COINFLY', ['DGD', 'BTC']],
+#    ['COINFLY', ['OMG', 'ETH']],  ['COINFLY', ['AE', 'ETH']], 
+#	 ['COINFLY', ['ZRX', 'ETH']],  ['COINFLY', ['ICX', 'ETH']], ['COINFLY', ['BTM', 'ETH']], 
+#	 ['COINFLY', ['BAT', 'ETH']], ['COINFLY', ['DGD', 'ETH']],]
+coinx
+	# 暂时不跑
+	['COINX', ['GMCC', 'USDT']],['COINX', ['ITEP', 'USDT']],['COINX', ['SGC', 'USDT']],['COINX', ['HPY', 'USDT']],
+
+	[['COINX', ['BTC', 'USDT']], ['COINX', ['ETH', 'USDT']], ['COINX', ['EOS', 'USDT']], ['COINX', ['LTC', 'USDT']],
+	 ['COINX',['DASH', 'USDT']], ['COINX', ['QTUM', 'USDT']], ['COINX', ['DVC', 'USDT']], ['COINX', ['DOGE', 'USDT']], 
+	 ['COINX', ['XMX', 'USDT']], ['COINX', ['HPS', 'USDT']], ['COINX', ['HPY', 'USDT']], ['COINX', ['HC', 'USDT']], 
+     ['COINX', ['ETH', 'BTC']],  ['COINX', ['EOS', 'BTC']],  ['COINX', ['LTC', 'BTC']], 
+	 ['COINX', ['DASH', 'BTC']], ['COINX', ['QTUM', 'BTC']], ['COINX', ['ZIL', 'BTC']], ['COINX', ['AE', 'BTC']],
+	 ['COINX', ['CTXC', 'BTC']], ['COINX', ['NAS', 'BTC']], ['COINX', ['HPS', 'BTC']],
+     ]
+没有了	
+# hbank
+# 	[['HBANK', ['BTC', 'USDT']], ['HBANK', ['ETH', 'USDT']], ['HBANK', ['BTM', 'USDT']],
+#     ['HBANK', ['ETH', 'BTC']], ['HBANK', ['BTM', 'BTC']],
+#     ['HBANK', ['BTM', 'ETH']],]
+	 
+飞小号接口：
+	'TTEX':
+		url = 'https://www.ttex.pro/v2/o/openapi/allticker'
+    'COINX':
+		url = 'https://coinx.im/v2/o/openapi/allticker'
+
+
+		
+https://api-otc.huobipro.com/v1/otc/trade/list/public?coinId=2&currency=1&tradeType=1&currentPage=1&payWay=&country=&merchant=1&online=1&range=0
+
+
+ret = {
+        'symbol': symbol,
+        'quantity_scale_buy': 0.2,
+        'quantity_scale_sell': 0.2,
+        'total_quant_per_day_btc': 1000,
+        'account_fee': 0.001
+    }
+symbol == ['OMG', 'ETH']:
+sym0 = 'OMG'
+sym_base0 = 'ETH'
+exchange_base = 'huobi'
+base_order_quantity_scale = 1100
+base_order_range_scale = 1
+avg_sym_btc = 1 / 1000
+symbol_price_decimal = 8
+symbol_quant_decimal = 4
+symbol_quant_int_decimal = 1
+min_quant = 0.0001
+msym = 'BTC'
+order_gap = 0.02
+
+FixScalePrice('BXX', symbol[0], symbol[1], symbol_price_decimal, -10000, exchange_base,
+                                          sym0, sym_base0, 1)
+										  
+										  
+1050217775596920834
+1050217775596920834
+1050217775596920834

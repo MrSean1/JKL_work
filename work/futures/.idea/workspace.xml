@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d18badbf-2407-461c-914b-7c1957cad28d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/work.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/.idea/all_jkl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/accounts_bxx.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/code_1009/USDT_rate.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/code_1009/accounts_bxx.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/code_1009/accounts_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/code_1009/accounts_ttex.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/code_1009/config_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/code_1009/fake_order_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/code_1009/fake_quantity_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/code_1009/pause.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/code_1009/pause_ex.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/code_1009/price.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/code_1009/sql_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/.idea/ex_api.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_all.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_binance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_bithumb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_bixin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_coinegg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_coinw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_hadax.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_huobi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_okex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_tt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_vbtc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/api_zb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/ex_api/exchange.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/send_email/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/send_email/send_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/send_email/write_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/short_message/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../all_jkl/short_message/short_message.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/.idea/bitmex.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/bitmex_roobt/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/geckodriver.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/ghostdriver.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/k_line.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/one_min/1_min_kline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/wan.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/wan.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/websocket_bitmex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bitmex/ws_bitmex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../check_balabce/.idea/check_balabce.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../check_balabce/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../check_balabce/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../check_balabce/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../check_balabce/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../check_balabce/accounts_bxx.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../check_balabce/accounts_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../check_balabce/get_balance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/.idea/register_fxh.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/fxh_rejister.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/get_ip.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/get_phone.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/phantomjs.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/scrapy_test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/scrapy_test/scrapy_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/test2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/test_register.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/wandou_http_python_demo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../register_fxh/wandou_http_python_demo.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.test.log.swp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/email_msg/fxh_api.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/email_msg/market_all_depth.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/email_msg/market_depth.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/email_msg/price_iss.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/email_msg/warn_api.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/email_msg/warn_email.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/check_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/check_api/bxx_kline_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/check_api/bxx_kline_1h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/check_api/bxx_kline_30.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_all.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_binance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_bithumb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_bixin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_coinegg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_coinw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_hadax.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_huobi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_okex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_tt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_vbtc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/api_zb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/ex_api/exchange.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/send_email/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/send_email/send_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/send_email/write_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/short_message/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/ex_api/short_message/short_message.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/fxh/bxx_all_depth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/fxh/bxx_depth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/fxh/feixiaohao_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/log/.fxh.txt.swp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/log/fxh.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/log/market_all_depth.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/log/market_depth.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/log/test.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/log/test_api.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/monitor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/package/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/package/bit_mex_rest_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/package/bitmex_websocket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/package/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/package/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/package/test_bit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/package/util/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/package/util/api_key.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/start.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/account_api/Login_Controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/account_api/User_Bank_Controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/account_api/User_Controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/account_api/User_Market_Controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/base_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/base_api/api_all.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/market_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/market_api/fifth_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/market_api/first_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/market_api/fourth_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/market_api/second_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/market_api/third_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/swagger_test/monitor_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/testing/hedging/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/testing/hedging/account_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/testing/hedging/config_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/testing/hedging/hedge_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/testing/hedging/huobi_hedging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DKL" beforeDir="false" afterPath="$PROJECT_DIR$/../DKL" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/futures$duo_kong.coverage" NAME="duo_kong Coverage Results" MODIFIED="1547710522736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/signal" />
+    <SUITE FILE_PATH="coverage/futures$mt4_account.coverage" NAME="mt4_account Coverage Results" MODIFIED="1548231807066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MT4" />
+    <SUITE FILE_PATH="coverage/futures$shangchen_1688.coverage" NAME="shangchen_1688 Coverage Results" MODIFIED="1545908263186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop" />
+    <SUITE FILE_PATH="coverage/futures$test_performance.coverage" NAME="test_performance Coverage Results" MODIFIED="1548834504524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MT4" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1167596727">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.0" value="3" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="csv" value="5" />
+          <entry key="cvs" value="5" />
+          <entry key="py" value="24" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="Python" value="24" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Python Console" value="5423" />
+          <entry key="cvs" value="1" />
+          <entry key="py" value="9930" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="15353" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/follow_trade.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/check_and_send_warning.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="270" column="27" selection-start-line="270" selection-start-column="27" selection-end-line="270" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MT4/test_performance.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="61" column="72" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
+              <folding>
+                <element signature="e#40#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MT4/abc.cvs">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Account/sp_account.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="276" lean-forward="true" selection-start-line="276" selection-end-line="276" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Account/mt4_account.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/signal/abc.cvs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>get_tra</find>
+      <find>int</find>
+      <find>self.pos</find>
+      <find>add</find>
+      <find>logger.info</find>
+      <find>ua</find>
+      <find>headers</find>
+      <find>path</find>
+      <find>median_low_high</find>
+      <find>order_status</find>
+      <find>print(ret)</find>
+      <find>ret = requests.get(self.__rest_root + '/orders/' + self.account, timeout=15).json()</find>
+      <find>b</find>
+      <find>print</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/follow_trade.py" />
+        <option value="$USER_HOME$/Desktop/shangchen_1688.py" />
+        <option value="$PROJECT_DIR$/get_data_for_kline.py" />
+        <option value="$PROJECT_DIR$/Account(1).py" />
+        <option value="$PROJECT_DIR$/signal/duo_kong.py" />
+        <option value="$PROJECT_DIR$/Account.py" />
+        <option value="$PROJECT_DIR$/signal/abc.cvs" />
+        <option value="$PROJECT_DIR$/MT4/c.py" />
+        <option value="$USER_HOME$/Desktop/check_and_send_warning.py" />
+        <option value="$PROJECT_DIR$/MT4/mt4_account.py" />
+        <option value="$PROJECT_DIR$/MT4/a.py" />
+        <option value="$PROJECT_DIR$/Account/sp_account.py" />
+        <option value="$PROJECT_DIR$/Account/mt4_account.py" />
+        <option value="$PROJECT_DIR$/MT4/test_performance.py" />
+        <option value="$PROJECT_DIR$/MT4/abc.cvs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="87" />
+    <option name="y" value="6" />
+    <option name="width" value="1641" />
+    <option name="height" value="992" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyGlobalUndefinedInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="futures" type="b2602c69:ProjectViewProjectNode" />
+              <item name="futures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="futures" type="b2602c69:ProjectViewProjectNode" />
+              <item name="futures" type="462c0819:PsiDirectoryNode" />
+              <item name="MT4" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/check_and_send_warning.py" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.test_performance">
+    <configuration name="duo_kong" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="futures" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/signal" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/signal/duo_kong.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mt4_account" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="futures" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MT4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MT4/mt4_account.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="shangchen_1688" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="futures" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/shangchen_1688.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_performance" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="futures" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MT4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MT4/test_performance.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.shangchen_1688" />
+      <item itemvalue="Python.duo_kong" />
+      <item itemvalue="Python.mt4_account" />
+      <item itemvalue="Python.test_performance" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test_performance" />
+        <item itemvalue="Python.mt4_account" />
+        <item itemvalue="Python.duo_kong" />
+        <item itemvalue="Python.shangchen_1688" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d18badbf-2407-461c-914b-7c1957cad28d" name="Default Changelist" comment="" />
+      <created>1544774525122</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544774525122</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="87" y="6" width="1641" height="992" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12333966" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27537924" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5495916" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32908458" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.2792584" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50039715" side_tool="true" weight="0.6743916" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.46100116" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49960285" weight="0.43640608" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-1709590801/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="5126" column="11" lean-forward="true" selection-start-line="5126" selection-start-column="11" selection-end-line="5126" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../bitmex/bitmex_roobt/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/software/anaconda/Anaconda/Lib/site-packages/requests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/shangchen_1688.py" />
+    <entry file="file://$PROJECT_DIR$/2019-01-15_YMH9.csv" />
+    <entry file="file://$PROJECT_DIR$/data/YMH9/2019-01-15_YMH9.csv" />
+    <entry file="file://$PROJECT_DIR$/Account(1).py" />
+    <entry file="file://D:/software/anaconda/Anaconda/Lib/site-packages/talib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/signal/duo_kong.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding>
+            <element signature="e#22#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/HOK9/2019-01-15_HOK9.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_data_for_kline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="56" column="50" selection-start-line="56" selection-start-column="50" selection-end-line="56" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/software/anaconda/Anaconda/Lib/site-packages/IPython/core/interactiveshell.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="2962" selection-start-line="2962" selection-end-line="2962" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/a.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/signal/abc.cvs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MT4/c.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MT4/abc.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3100">
+          <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MT4/a.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MT4/mt4_account.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="218" column="26" lean-forward="true" selection-start-line="218" selection-start-column="26" selection-end-line="218" selection-end-column="26" />
+          <folding>
+            <element signature="e#22#36#0" expanded="true" />
+            <element signature="e#1475#1770#0" />
+            <element signature="e#3681#5478#0" />
+            <element signature="e#5307#6982#0" />
+            <element signature="e#7384#7696#0" />
+            <element signature="e#7744#8046#0" />
+            <element signature="e#8695#9437#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Account.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1725">
+          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding>
+            <element signature="e#22#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/follow_trade.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/check_and_send_warning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="270" column="27" selection-start-line="270" selection-start-column="27" selection-end-line="270" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Account/sp_account.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="276" lean-forward="true" selection-start-line="276" selection-end-line="276" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Account/mt4_account.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MT4/abc.cvs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MT4/test_performance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="61" column="72" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
+          <folding>
+            <element signature="e#40#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

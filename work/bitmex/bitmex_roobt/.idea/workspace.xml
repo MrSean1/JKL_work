@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ff10a17c-ad82-4113-9288-66632fff2104" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/work.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/.idea/all_jkl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/accounts_bxx.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/USDT_rate.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/accounts_bxx.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/accounts_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/accounts_ttex.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/config_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/fake_order_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/fake_quantity_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/pause.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/pause_ex.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/price.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/sql_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/.idea/ex_api.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_all.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_binance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_bithumb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_bixin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_coinegg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_coinw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_hadax.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_huobi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_okex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_tt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_vbtc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_zb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/exchange.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/send_email/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/send_email/send_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/send_email/write_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/short_message/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/short_message/short_message.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/bitmex.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../geckodriver.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ghostdriver.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../k_line.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../one_min/1_min_kline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wan.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wan.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../websocket_bitmex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ws_bitmex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/.idea/check_balabce.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/accounts_bxx.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/accounts_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/get_balance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/register_fxh.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/fxh_rejister.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/get_ip.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/get_phone.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/phantomjs.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/scrapy_test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/scrapy_test/scrapy_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/test2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/test_register.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/wandou_http_python_demo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/wandou_http_python_demo.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.test.log.swp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/email_msg/fxh_api.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/email_msg/market_all_depth.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/email_msg/market_depth.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/email_msg/price_iss.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/email_msg/warn_api.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/email_msg/warn_email.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/check_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/check_api/bxx_kline_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/check_api/bxx_kline_1h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/check_api/bxx_kline_30.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_all.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_binance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_bithumb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_bixin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_coinegg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_coinw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_hadax.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_huobi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_okex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_tt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_vbtc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_zb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/exchange.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/send_email/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/send_email/send_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/send_email/write_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/short_message/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/short_message/short_message.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/fxh/bxx_all_depth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/fxh/bxx_depth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/fxh/feixiaohao_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/log/.fxh.txt.swp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/log/fxh.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/log/market_all_depth.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/log/market_depth.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/log/test.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/log/test_api.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/monitor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/bit_mex_rest_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/bitmex_websocket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/test_bit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/util/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/util/api_key.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/start.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/account_api/Login_Controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/account_api/User_Bank_Controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/account_api/User_Controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/account_api/User_Market_Controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/base_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/base_api/api_all.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/market_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/market_api/fifth_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/market_api/first_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/market_api/fourth_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/market_api/second_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/market_api/third_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/monitor_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/testing/hedging/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/testing/hedging/account_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/testing/hedging/config_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/testing/hedging/hedge_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/testing/hedging/huobi_hedging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DKL" beforeDir="false" afterPath="$PROJECT_DIR$/../../DKL" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/bitmex_roobt$fxh_rejister.coverage" NAME="fxh_rejister Coverage Results" MODIFIED="1541486740971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../register_fxh" />
+    <SUITE FILE_PATH="coverage/bitmex_roobt$huobi.coverage" NAME="huobi Coverage Results" MODIFIED="1541140185591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1343217817">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="INSTALLER" value="1" />
+          <entry key="METADATA" value="1" />
+          <entry key="RECORD" value="1" />
+          <entry key="ini" value="1" />
+          <entry key="log" value="1" />
+          <entry key="md" value="2" />
+          <entry key="py" value="31" />
+          <entry key="rst" value="1" />
+          <entry key="txt" value="1" />
+          <entry key="非小号手机号cvs" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Ini" value="1" />
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Python" value="31" />
+          <entry key="ReST" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Python Console" value="634" />
+          <entry key="dummy" value="11" />
+          <entry key="py" value="2365" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="Python" value="2999" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../huo_websocket/my_websocket/huobi_websocket.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+                <marker date="1541143591358" expanded="true" signature="103:108" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/orders-accounts-Python3-demo/demo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../okex_websocket/okcoin_websocket.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="105" column="38" lean-forward="true" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Setup Script" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>accessKey</find>
+      <find>datasymbols</find>
+      <find>sub_padding</find>
+      <find>_sign</find>
+      <find>Message</find>
+      <find>authdata</find>
+      <find>on_close</find>
+      <find>on_open</find>
+      <find>url</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/afdadf.py" />
+        <option value="$PROJECT_DIR$/rest_kline.py" />
+        <option value="$PROJECT_DIR$/count_kline.py" />
+        <option value="$PROJECT_DIR$/../../huo_websocket/my_websocket/huobi_websocket.py" />
+        <option value="$PROJECT_DIR$/get_kline.py" />
+        <option value="$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/orders-accounts-Python3-demo/params.ini" />
+        <option value="$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/orders-accounts-Python3-demo/demo.py" />
+        <option value="$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/huobi.py" />
+        <option value="$PROJECT_DIR$/../../okex_websocket/dafgaf.py" />
+        <option value="$PROJECT_DIR$/../../okex_websocket/okcoin_websocket.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="286" />
+    <option name="y" value="18" />
+    <option name="width" value="1300" />
+    <option name="height" value="937" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyTypeCheckerInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="bitmex_roobt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="okex_websocket" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../okex_websocket" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.fxh_rejister">
+    <configuration name="fxh_rejister" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="register_fxh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../register_fxh" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../register_fxh/fxh_rejister.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="huobi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="huo_websocket" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/huobi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.fxh_rejister" />
+      <item itemvalue="Python.huobi" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.fxh_rejister" />
+        <item itemvalue="Python.huobi" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ff10a17c-ad82-4113-9288-66632fff2104" name="Default Changelist" comment="" />
+      <created>1540894256104</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1540894256104</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="286" y="18" width="1300" height="937" extended-state="0" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14435484" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32942554" />
+      <window_info anchor="bottom" id="Python Console" sideWeight="0.49820468" weight="0.29301745" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32942554" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50179535" side_tool="true" weight="0.38297874" />
+      <window_info anchor="bottom" id="File Transfer" weight="0.31770223" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33167082" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32942554" />
+      <window_info anchor="right" id="Remote Host" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" weight="0.22334754" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/log/abc.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/count_kline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="113" column="51" selection-start-line="113" selection-start-column="51" selection-end-line="113" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rest_kline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1540997875266" expanded="true" signature="2964:3236" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/afdadf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="603" selection-start-line="603" selection-end-line="603" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/anaconda/Anaconda/Lib/site-packages/websocket/_core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="232" column="11" selection-start-line="232" selection-start-column="11" selection-end-line="232" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/get_kline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="75" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1541148684026" expanded="true" signature="332:333" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/751752537/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="175" column="59" lean-forward="true" selection-start-line="173" selection-start-column="4" selection-end-line="175" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/orders-accounts-Python3-demo/params.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/orders-accounts-Python3-demo/usage.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="315">
+            <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/huobi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#40#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/websocket_client-0.44.0.dist-info/DESCRIPTION.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/websocket_client-0.44.0.dist-info/top_level.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/websocket_client-0.44.0.dist-info/RECORD">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="54" lean-forward="true" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/websocket_client-0.44.0.dist-info/METADATA">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="77" column="5" lean-forward="true" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/websocket_client-0.44.0.dist-info/INSTALLER">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/anaconda/Anaconda/Lib/site-packages/websocket/_logging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="34" column="67" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/751752537/zlib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="148" column="74" lean-forward="true" selection-start-line="142" selection-start-column="4" selection-end-line="148" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/anaconda/Anaconda/Lib/site-packages/gevent/libev/watcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3200">
+          <caret line="211" column="8" selection-start-line="211" selection-start-column="8" selection-end-line="211" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/anaconda/Anaconda/Lib/site-packages/websocket/_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="221" column="21" selection-start-line="221" selection-start-column="21" selection-end-line="221" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../register_fxh/非小号手机号cvs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7428" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../register_fxh/fxh_rejister.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="28" column="65" lean-forward="true" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../okex_websocket/dafgaf.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../okex_websocket/okcoin_websocket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="105" column="38" lean-forward="true" selection-start-line="105" selection-start-column="38" selection-end-line="105" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../huo_websocket/my_websocket/huobi_websocket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1541143591358" expanded="true" signature="103:108" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../huo_websocket/Websocket-Python3-demo-master/orders-accounts-Python3-demo/demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

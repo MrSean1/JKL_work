@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e35e3694-91b0-4724-b870-e31a37d912dd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/work.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/.idea/all_jkl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/accounts_bxx.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/USDT_rate.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/accounts_bxx.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/accounts_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/accounts_ttex.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/config_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/fake_order_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/fake_quantity_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/pause.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/pause_ex.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/price.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/code_1009/sql_code.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/.idea/ex_api.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_all.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_binance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_bithumb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_bixin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_coinegg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_coinw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_hadax.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_huobi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_okex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_tt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_vbtc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/api_zb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/ex_api/exchange.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/send_email/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/send_email/send_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/send_email/write_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/short_message/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../all_jkl/short_message/short_message.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/.idea/bitmex.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/bitmex_roobt/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/geckodriver.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/ghostdriver.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/k_line.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/one_min/1_min_kline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/wan.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/wan.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/websocket_bitmex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bitmex/ws_bitmex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/.idea/check_balabce.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/accounts_bxx.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/accounts_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../check_balabce/get_balance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/register_fxh.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/fxh_rejister.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/get_ip.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/get_phone.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/phantomjs.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/scrapy_test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/scrapy_test/scrapy_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/test2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/test_register.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/wandou_http_python_demo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../register_fxh/wandou_http_python_demo.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/server.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/.test.log.swp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/email_msg/fxh_api.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/email_msg/market_all_depth.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/email_msg/market_depth.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/email_msg/price_iss.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/email_msg/warn_api.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/email_msg/warn_email.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/check_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/check_api/bxx_kline_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/check_api/bxx_kline_1h.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/check_api/bxx_kline_30.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_all.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_binance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_bithumb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_bixin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_coinegg.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_coinw.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_hadax.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_huobi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_okex.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_tt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_vbtc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/api_zb.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/ex_api/exchange.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/send_email/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/send_email/send_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/send_email/write_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/short_message/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/ex_api/short_message/short_message.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/fxh/bxx_all_depth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/fxh/bxx_depth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/fxh/feixiaohao_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/log/.fxh.txt.swp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/log/fxh.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/log/market_all_depth.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/log/market_depth.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/log/test.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/log/test_api.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/monitor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/bit_mex_rest_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/bitmex_websocket.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/test_bit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/util/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/package/util/api_key.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/start.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/account_api/Login_Controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/account_api/User_Bank_Controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/account_api/User_Controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/account_api/User_Market_Controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/base_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/base_api/api_all.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/market_api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/market_api/fifth_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/market_api/first_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/market_api/fourth_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/market_api/second_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/market_api/third_four_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/swagger_test/monitor_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/testing/hedging/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/testing/hedging/account_info.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/testing/hedging/config_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/testing/hedging/hedge_bxx.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../server/testing/hedging/huobi_hedging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DKL" beforeDir="false" afterPath="$PROJECT_DIR$/../../DKL" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/signal$duo_kong.coverage" NAME="duo_kong Coverage Results" MODIFIED="1547810838234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-25665567">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Python Console" value="397" />
+          <entry key="py" value="415" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="812" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/duo_kong.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1150">
+              <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+              <folding>
+                <element signature="e#22#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/liang_zhu.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <marker date="1548042650359" expanded="true" signature="57:62" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/duo_kong.py" />
+        <option value="$PROJECT_DIR$/liang_zhu.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="152" />
+    <option name="y" value="60" />
+    <option name="width" value="1530" />
+    <option name="height" value="998" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="signal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="signal" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="duo_kong" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="signal" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/duo_kong.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.duo_kong" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e35e3694-91b0-4724-b870-e31a37d912dd" name="Default Changelist" comment="" />
+      <created>1547804305998</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1547804305998</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="152" y="60" width="1530" height="998" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15170068" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info active="true" anchor="bottom" id="Python Console" visible="true" weight="0.37543452" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.56431055" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="SciView" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/duo_kong.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="46" column="53" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+          <folding>
+            <element signature="e#22#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liang_zhu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <marker date="1548042650359" expanded="true" signature="57:62" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

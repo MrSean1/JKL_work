@@ -1,0 +1,23 @@
+需要处理的交易对：
+
+	USDT: ['QTUM','EOS','DASH','HSR','DOGE','HPY','XMX']
+	BTC:['LTC','XMX','BNB','HT','NAS','TRX','ZIL','AE','CTXC','DASH','EOS','HSR','QTUM']
+	
+	
+
+key = ['COINX', '12012340002', '1234Rty77899x']
+
+
+self_order    	暂时不用测  已经通过了
+order			下单问题    下单成功后返回订单号   出现timeout超市错误
+get_my_depth	拿到所有下单信息    主要是订单号
+cancel		·	取消订单    问题： 取消订单后返回值为ok   第二次取消订单应该返回50010错误   但是现在仍然返回ok   表示订单没有背取消掉
+
+50010
+ex = Exchange('bxx',key)
+
+symbol=['BTC','USDT']
+ex.api.self_order(symbol,'buy',0.01,6975)
+ex.api.order(symbol,'buy',0.01,6975)
+ex.api.get_my_depth(symbol)
+ex.api.cancel(随便一个上面拿到的order_id)

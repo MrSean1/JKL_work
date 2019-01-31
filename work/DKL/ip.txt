@@ -1,0 +1,148 @@
+HBANK  MYSQL    coincalf		GjCCU%1t2y1y
+BXX    MYSQL    ex(高全账号)		7Sg6My8JKYhsAnyjnQ2tKKm6
+REDIS  	其他	rLfL8CAQ7NuRuGd6
+	BXX  	r23Fs7pTSnT2q8Vs
+开发机
+linux账户
+root  
+qwe!@#asd
+
+192.168.0.128： 
+mysql  端口：3306  用户：devdb 密码：waQ,qR%be2
+redis 端口：6379  密码：#3i56;@1
+rabbitmq 端口：5672  页面端口：15672 用户：admin 密码：4dew53@#
+192.168.0.130：
+mongodb 端口：27017 页面端口：28017 用户：admin 密码：1q2w3e4r
+zookeeper 端口：2181
+kafka 端口：9092
+
+测试环境
+http://39.108.112.21:8761/   
+172.18.158.159/160/161  
+
+Hbank  13229    
+COINFLY  27   
+DAPPEX  3361   
+BXX 12996  
+Ttex 29
+
+insert into table (player_id,award_type,num)  values(20001,0,1) on  DUPLICATE key update num=num+values(num)
+
+git clone -b dev  http://username:password@119.23.44.193/root/exchange.git
+http://119.23.44.193/root/exchange.git
+
+ssh root@47.89.21.52
+  	r6kcu3zkbZreKwexQ62x3AK3
+
+
+
+ttex		
+	192.168.0.2/47.75.112.117  	chan-service  match-service		boss user-service trade-service gateway service
+	192.168.0.5/47.75.151.126	admin   task 			boss user-service trade-service gateway service
+	192.168.0.8/47.91.235.209	eureka monitor config		boss user-service trade-service gateway service
+	192.168.0.56
+   kafka	
+	192.168.0.4/47.75.187.179
+	192.168.0.7/47.75.87.199
+	192.168.0.6/47.75.66.187
+
+	
+dappex
+	192.168.0.39/47.75.171.48 	eureka  monitor config 			 user-service trade-service gateway service boss
+		   
+	192.168.0.40/47.75.193.56	match-service mining chan-service  	 user-service trade-service gateway service boss
+
+	192.168.0.41/47.75.103.45	task   admin				 user-service trade-service gateway service boss
+	192.168.0.28/47.75.195.6
+	rabbitmq：47.75.122.74 :15672
+
+   kafka:
+	192.168.0.36:9092/47.75.122.74
+	192.168.0.37:9092
+	192.168.0.38:9092
+
+hbank	
+	192.168.0.15/47.52.208.239	chan-service  match-service mining	 user-service  gateway service boss		
+	192.168.0.16/47.75.170.15   	eureka  monitor config 			 user-service  gateway service boss
+	192.168.0.17/47.75.67.158	task    admin	trade-service		 user-service  gateway service boss
+	mongodb://root:****@**@dds-j6c57380a57409f41121-pub.mongodb.rds.aliyuncs.com:3717,dds,17,dds-j6c57380a57409f42670-pub.mongodb.rds.aliyuncs.com:3717/admin?replicaSet=mgset-7294719
+	
+   kafka:
+	192.168.0.12/47.52.43.176
+	192.168.0.13
+	192.168.0.14
+	
+bxx           root
+  XPuVHrN3fmZ4lAhdj5JpoGbWk9OYny
+	192.168.0.179/47.75.168.8	task	admin   			gateway  user-service   boss  service trade-service   
+	192.168.0.180/47.75.130.23	eureka    config 	chan-service  	gateway  user-service   boss  service trade-service 
+	192.168.0.182/47.75.85.220	match-service mining		gateway	 user-service	boss  service trade-service
+                rabbitmq：http://47.75.133.29:15672/
+   kafka:
+	192.168.0.175/47.75.133.29
+
+coinfly	
+	192.168.0.45/47.89.16.50       	 eureka		  config				gateway	 
+	192.168.0.46/47.52.113.246	chan-service	  match-service			gateway	 user-service	boss  service
+	192.168.0.47/47.75.148.144	task		  admin				gateway	 user-service	boss  service trade-service
+	192.168.0.251/47.75.109.153
+   kafka
+	192.168.0.48/47.75.178.241	
+	192.168.0.49
+	192.168.0.50
+
+http://www.bejson.com/
+
+wait_timeout=31536000
+interactive_timeout=31536000
+
+$2a$10$4p8WXyjgREewIMEAC8tno.sqkHalr34cDa8g8CT8inVIfWn6BbYai
+SELECT *  FROM `ex_trade`.`user`    WHERE  `id`  =   1015536651323852228;
+1234Rty77899x----------------------18501251795  1234Rty77899x  
+UPDATE `ex_trade`.`user` set `password` = '$2a$10$4p8WXyjgREewIMEAC8tno.sqkHalr34cDa8g8CT8inVIfWn6BbYai' WHERE `id` = 1015536651323853118 
+$2a$10$glZnR2RP6oXzw1/zlHdoEeZmpuqTvZ3JhecoEv/pzEXPhtRKnbpka
+TTEX 1024641555462365185
+
+$2a$10$0SN5s6plBwxxiV/YPwzfrunb4zsANW0rTopGv4EWYmYm4En82RdUi
+$2a$10$4p8WXyjgREewIMEAC8tno.sqkHalr34cDa8g8CT8inVIfWn6BbYai
+
+
+15024829655
+64b8f5fd3828a71e52a8371af7b8b596
+64B8F5FD3828A71E52A8371AF7B8B596
+
+BXX主号：BXX_ADMIN   1234Rty778!99x
+二级管理员：BXX_2admin   1234Rty778!99y
+
+https://db-in.bxx.com
+RDS只读账户
+用户：chaxun
+密码：OjWV2thZC8GzQv69Bd0aopeYxmLnIE
+【bxx】
+rm-j6c056ogj7qml8l9tbo.mysql.rds.aliyuncs.com
+
+
+【ttex】
+rm-j6c152rt5590f8aq8.mysql.rds.aliyuncs.com
+
+
+【hbank】
+rm-j6c060px5e0rg33xi.mysql.rds.aliyuncs.com
+
+
+【dappex】
+
+rm-j6ci4u18629lc9g99.mysql.rds.aliyuncs.com
+
+
+【coinfly】
+rm-j6cmw74cj3t4l260z.mysql.rds.aliyuncs.com
+
+
+【Coinx】
+rm-j6cy4tt1uz6yv7c95.mysql.rds.aliyuncs.com
+
+
+
+
+dds-j6ceec30d2a4da442.mongodb.rds.aliyuncs.com:3717

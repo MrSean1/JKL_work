@@ -1,0 +1,48 @@
+【机器人】
+47.244.37.23(弹性)
+192.168.0.9(私有)
+root
+KbVe5iGC2pWj9DZhLN7UTBEFXPRzuy
+
+# DASH/BTC0.026803 ≈ 1271.38 CNY 涨幅 +0.34% 高 0.026851 低 0.025535 24H量 16856 DASH
+    elif symbol == ['DASH', 'BTC']:
+        sym0 = 'DASH'
+        sym_base0 = 'BTC'
+		
+		# 参考的交易所  没有参考交易所的时候采用自己的定价策略   或者参考其他币种的涨跌  按百分比定价
+        exchange_base = 'huobi'
+		
+		# 根据日交易额的大小 avg_sym_btc 的分母成一个倍数
+		# >2000W 0.005 	3-6倍
+		# >500W 0.01   1-3倍
+		# <500W 0.02   0.5-1倍
+        base_order_quantity_scale = 250
+		
+		# 暂定  就几个固定值
+        base_order_range_scale = 1
+		
+		#通过比例得出大致范围
+        avg_sym_btc = 1 / 50
+		
+		# 固定值（后面有所处理？）  BTC/ETH区：8 4 1  USTD区：6 4 1 
+		# 设置这几个小数的作用主要是  方便定挂单和刷量的价位/订单量   的单保留多少位小数
+        symbol_price_decimal = 8
+        symbol_quant_decimal = 4
+        symbol_quant_int_decimal = 1
+		
+		# 最小量  固定值 不变
+        min_quant = 0.0001
+		# 在  BTC ETH LTC 之间进行选择  随意
+        msym = 'ETH'
+		
+		# 根据日交易额的大小来确定值
+		# >2000W 0.005 
+		# >500W 0.01  
+		# <500W 0.02
+		# 主要是由交易额可以看出这个币靠谱不靠谱
+		# 主链币基本维持在0.01附近就ok    不靠谱的币可以放大到0.05
+        order_gap = 0.01
+		
+		
+
+
