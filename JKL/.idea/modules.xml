@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/JKL.iml" filepath="$PROJECT_DIR$/.idea/JKL.iml" />
+      <module fileurl="file://D:/work/futures/.idea/futures.iml" filepath="D:/work/futures/.idea/futures.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/zhenxing_11.23/.idea/juyou_11.22.iml" filepath="$USER_HOME$/Desktop/zhenxing_11.23/.idea/juyou_11.22.iml" />
+      <module fileurl="file://D:/work/.idea/work.iml" filepath="D:/work/.idea/work.iml" />
+    </modules>
+  </component>
+</project>
