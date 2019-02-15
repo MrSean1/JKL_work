@@ -305,14 +305,14 @@ class Account:
             try:
                 ret = requests.get(self.__rest_root + "/price/{}/{}".format(self.account, prod_code), timeout=5).json()
                 # print(ret)
-                if ret['data_NK_HS-YM']['timestamp'] == '0':
+                if ret['data']['timestamp'] == '0':
                     self.subscription(prod_code)
                     continue
-                price = ret['data_NK_HS-YM']['last'][0]
-                quantity = ret['data_NK_HS-YM']['lastQty'][0]
-                timestamp = ret['data_NK_HS-YM']['timestamp']
+                price = ret['data']['last'][0]
+                quantity = ret['data']['lastQty'][0]
+                timestamp = ret['data']['timestamp']
                 date = datetime.datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S')
-                cur_path = os.getcwd() + os.path.sep + 'data_NK_HS-YM'
+                cur_path = os.getcwd() + os.path.sep + 'data'
                 file_name = date.strftime(
                     '%Y-%m-%d') + '_' + prod_code + '.csv'
                 if os.path.exists(cur_path):
@@ -348,7 +348,7 @@ class Account:
     @staticmethod
     def get_kline(prod_code):
         date = datetime.datetime.now()
-        cur_path = os.getcwd() + os.path.sep + 'data_NK_HS-YM' + os.path.sep + prod_code + os.path.sep + date.strftime(
+        cur_path = os.getcwd() + os.path.sep + 'data' + os.path.sep + prod_code + os.path.sep + date.strftime(
             '%Y-%m-%d') + '_' + prod_code + '.csv'
         if not os.path.exists(cur_path):
             print(prod_code + '找不到当天的数据，')

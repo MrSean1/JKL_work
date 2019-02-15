@@ -18,9 +18,9 @@ class GetDataForKline(Account):
             quantity = ret['lastQty'][0]
             time = ret['timestamp']
             date = datetime.datetime.strptime(time, '%Y-%m-%d %H:%M:%S')
-            file_name = './data_NK_HS-YM/' + prod_code + '/' + date.strftime('%Y/%m/%d') + '_' + prod_code + '.csv'
-            if not os.path.exists('./data_NK_HS-YM/' + prod_code):
-                os.mkdir('./data_NK_HS-YM/' + prod_code)
+            file_name = './data/' + prod_code + '/' + date.strftime('%Y/%m/%d') + '_' + prod_code + '.csv'
+            if not os.path.exists('./data/' + prod_code):
+                os.mkdir('./data/' + prod_code)
             data = [[prod_code, price, quantity, date]]
             try:
                 csv.reader(open(file_name, encoding='utf-8'))
