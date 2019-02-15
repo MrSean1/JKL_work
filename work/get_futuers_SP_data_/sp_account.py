@@ -2,22 +2,22 @@
 import csv
 import datetime
 import json
-import logging
 import os
 import threading
 import time
-
+from Log import Logger
 import pandas as pd
 import requests
 
 # account = 'DEMO201812037'
 # a = Account('73883669')
 
-product_list = ["YMH9", "HSIZ8", "HSIF9", "SSIH9"]
+product_list = ["YMH9", "HSI8", "HSIF9", "SSIH9"]
 
 
 class Account:
     def __init__(self, account):
+        self.log = Logger('all.log', level='debug')
         self.account = account
         self.balance = 0  # 总余额
         self.margin = 0  # 已使用保证金
@@ -26,19 +26,19 @@ class Account:
         self.pos = {}  # 当前仓位
         self.order_status = 0  # 无挂单/有挂单
         self.pos_status = 0  # 有仓位/无仓位
-        self.__rest_root = 'http://bxx.pub'
+        self.__rest_root = 'http://47.75.194.25:8081'
         # self.__rest_root = "http://localhost:8081"
         self.login()
         self.check_all_position()
         self.get_account()
         self.get_orders()
-        self.logger = logging.getLogger(__name__)
+        # self.logger = logging.getLogger(__name__)
         # for prod in product_list:
         #     self.get_depth(prod)
 
     # 用requests实现各种api方法
-    @staticmethod
-    def __dispose_info(ret):
+    # @staticmethod
+    def __dispose_info(self, ret):
         """
         处理返回信息
         :param ret: 返回信息
@@ -49,22 +49,30 @@ class Account:
         elif ret['code'] == 1 and ret['data'] != 'null':
             return ret['data']
         else:
-            print(ret)
+            # print(ret)
+            self.log.logger.error(ret)
             return 'error'
 
     def login(self):
         try:
+            self.log.logger.debug(self.__rest_root + "/login/{}".format(self.account))
             ret = requests.get(self.__rest_root + "/login/{}".format(self.account), timeout=5).json()
-            print(self.__dispose_info(ret))
+            # print(self.__dispose_info(ret))
+            self.log.logger.info(str(self.__dispose_info(ret)))
+            return self.__dispose_info(ret)
         except Exception as e:
-            print(e)
+            # print(e)
+            self.log.logger.error(e)
+            return False
 
     def logout(self):
         try:
             ret = requests.get(self.__rest_root + '/logout/{}'.format(self.account), timeout=5).json()
-            print(self.__dispose_info(ret))
+            # print(self.__dispose_info(ret))
+            self.log.logger.info(self.__dispose_info(ret))
         except Exception as e:
-            print(e)
+            # print(e)
+            self.log.logger.error(e)
 
     def get_account(self):
         """
@@ -78,14 +86,16 @@ class Account:
                     self.subscription(proCode)
             ret = requests.get(self.__rest_root + "/accInfo/{}".format(self.account), timeout=5).json()
             msg = self.__dispose_info(ret)
-            print(msg)
+            # print(msg)
+            self.log.logger.info(msg=msg)
             if msg is not 'error':
                 self.balance = msg['nav']
                 self.margin = msg['iMargin']
                 self.buy_power = msg['buyingPower']
                 self.maintain_margin = msg['mmargin']  # 维持保证金
         except Exception as e:
-            print(e)
+            # print(e)
+            self.log.logger.error(msg)
 
     def get_orders(self):
         """
@@ -103,10 +113,12 @@ class Account:
             else:
                 if msg == '没有订单':
                     self.order_status = 0
-                print(ret)
+                # print(ret)
+                self.log.logger.info(str(ret))
         except Exception as e:
-            print(e)
-            return 'false'
+            # print(e)
+            self.log.logger.error(e)
+            return False
 
     def get_trade_order(self):
         """
@@ -119,8 +131,9 @@ class Account:
                 ret = []
             return self.__dispose_info(ret)
         except Exception as e:
-            print(e)
-            return 'false'
+            # print(e)
+            self.log.logger.error(e)
+            return False
 
     def get_order(self, order_id):
         """
@@ -131,8 +144,8 @@ class Account:
             ret = requests.get(self.__rest_root + "/getOrder/{}/{}".format(self.account, order_id), timeout=5).json()
             return self.__dispose_info(ret)
         except Exception as e:
-            print(e)
-            return 'false'
+            self.log.logger.error(e)
+            return False
 
     def add_order(self, order_type, prod_code, side, quantity, price=0, order_options=0, valid_type=0,
                   status=1):
@@ -152,7 +165,8 @@ class Account:
         if prod_code[0:-2] in dec_dic.keys():
             dec_in_price = dec_dic[prod_code[0:-2]]
         else:
-            print('没有此类商品的精度')
+            # print('没有此类商品的精度')
+            self.log.logger.error('没有此类商品的精度')
             raise ValueError
         if prod_code[0:-2] == "HSI":
             order_options = 1
@@ -174,8 +188,9 @@ class Account:
             ret = requests.post(self.__rest_root + '/addOrder/{}'.format(self.account), json=params, timeout=5).json()
             return self.__dispose_info(ret)
         except Exception as e:
-            print(e)
-            return 'false'
+            # print(e)
+            self.log.logger.error(e)
+            return False
 
     def cancel_all(self):
         """
@@ -184,11 +199,13 @@ class Account:
         """
         try:
             ret = requests.get(self.__rest_root + '/deleteAllOrder/{}'.format(self.account), timeout=5).json()
-            print(ret)
+            # print(ret)
+            self.log.logger.info(ret)
             return self.__dispose_info(ret)
         except Exception as e:
-            print(e)
-            return 'false'
+            # print(e)
+            self.log.logger.error(e)
+            return False
 
     def cancel_order(self, order_id, prod_code, cl_order_id=''):
         """
@@ -204,8 +221,9 @@ class Account:
                 timeout=5).json()
             return self.__dispose_info(ret)
         except Exception as e:
-            print(e)
-            return 'false'
+            # print(e)
+            self.log.logger.error(e)
+            return False
 
     def check_position(self, prod_code):
         """
@@ -222,8 +240,9 @@ class Account:
                 msg['q'] = -msg['qty'] + msg['longQty'] - msg['shortQty']
             return msg
         except Exception as e:
-            print(e)
-            return 'false'
+            # print(e)
+            self.log.logger.error(e)
+            return False
 
     def check_all_position(self):
         """
@@ -252,8 +271,9 @@ class Account:
             else:
                 return self.pos
         except Exception as e:
-            print(e)
-            return 'false'
+            # print(e)
+            self.log.logger.error(e)
+            return False
 
     def subscription(self, prod_code, subscribe='price', mode=1):
         """
@@ -268,12 +288,15 @@ class Account:
                                timeout=5).json()
             msg = self.__dispose_info(ret)
             if msg == '订阅成功':
-                print(msg)
+                # print(msg)
+                self.log.logger.info(msg)
             else:
-                print(ret)
+                # print(ret)
+                self.log.logger.info(msg)
         except Exception as e:
-            print(e)
-            return 'false'
+            # print(e)
+            self.log.logger.error(e)
+            return False
 
     def get_depth(self, prod_code):
         """
@@ -297,8 +320,9 @@ class Account:
             depth_dic['timestamp'] = msg['timestamp']
             return depth_dic
         except Exception as e:
-            print(e)
-            return 'false'
+            # print(e)
+            self.log.logger.error(e)
+            return False
 
     def write_data_for_file(self, prod_code):
         while True:
@@ -336,22 +360,27 @@ class Account:
                                      mode='a+', encoding='utf-8')
                 # 存储数据
             except Exception as e:
-                print(e)
-                print(prod_code + '存储失败')
+                # print(e)
+                self.log.logger.error(e)
+                # print(prod_code + '存储失败')
+                self.log.logger.error(prod_code + '存储失败')
                 break
             time.sleep(1)
+        return False
 
     def get_data(self, prod_code):
+        self.log.logger.info('开始抓取数据')
         th = threading.Thread(target=self.write_data_for_file, args=(prod_code,))
         th.start()
 
-    @staticmethod
-    def get_kline(prod_code):
+    # @staticmethod
+    def get_kline(self, prod_code):
         date = datetime.datetime.now()
         cur_path = os.getcwd() + os.path.sep + 'data' + os.path.sep + prod_code + os.path.sep + date.strftime(
             '%Y-%m-%d') + '_' + prod_code + '.csv'
         if not os.path.exists(cur_path):
-            print(prod_code + '找不到当天的数据，')
+            # print(prod_code + '找不到当天的数据，')
+            self.log.logger.warning(prod_code + '找不到当天的数据，')
             return False
         else:
             df = pd.read_csv(cur_path)
@@ -373,5 +402,6 @@ class Account:
                          start_time.strftime('%Y-%m-%d %H:%M:%S')]
                 return kline
             else:
-                print(start_time.strftime('%Y-%m-%d %H:%M:%S') + '没有抓到这一分钟的数据')
+                # print(start_time.strftime('%Y-%m-%d %H:%M:%S') + '没有抓到这一分钟的数据')
+                self.log.logger.warning('没有抓到这一分钟的数据')
                 return False
