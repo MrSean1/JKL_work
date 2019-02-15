@@ -29,6 +29,7 @@ class MT4Account:
         :return: 账户信息
         """
         try:
+            print(self.__rest_root + '/accInfo/' + self.account)
             ret = requests.get(self.__rest_root + '/accInfo/' + self.account, timeout=5).json()
             msg = self.__dispose_info(ret)
             if msg is not 'error':
@@ -47,7 +48,7 @@ class MT4Account:
         :return:
         """
         if ret['code'] == 1:
-            return ret['data_NK_HS-YM']
+            return ret['data']
         else:
             print(ret)
             return 'error'

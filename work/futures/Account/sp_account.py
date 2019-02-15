@@ -44,10 +44,10 @@ class Account:
         :param ret: 返回信息
         :return:
         """
-        if ret['code'] == 1 and ret['data_NK_HS-YM'] == '':
+        if ret['code'] == 1 and ret['data'] == '':
             return ret['msg']
-        elif ret['code'] == 1 and ret['data_NK_HS-YM'] != 'null':
-            return ret['data_NK_HS-YM']
+        elif ret['code'] == 1 and ret['data'] != 'null':
+            return ret['data']
         else:
             print(ret)
             return 'error'

@@ -1,0 +1,14 @@
+sp
+			47.75.194.25(弹性)
+			192.168.0.20(私有)
+			administrator
+			9kwSRQpVW7MxiJoOa01UTgetBZH3vh
+
+MT4
+			47.244.120.214(公)
+			172.31.205.166(私有)
+			administrator
+			9kwSRQpVW7MxiJoOa01UTgetBZH3vh
+
+			mysql root
+			ViOwLI2NG4WSCXkAuFeK0U3vj89stY
