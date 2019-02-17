@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 from Log import Logger
 
 em_user = '295861809@qq.com'
-pwd = 'irzrbrekyaldbicf'
+pwd = 'qxkrwbmoxosdbhfi'
 address = ['295861809@qq.com', ]
 smtp_server = 'smtp.qq.com'
 
@@ -37,4 +37,5 @@ class Email:
             except smtplib.SMTPException as e:
                 time.sleep(5)
                 count += 1
-                print('第{}次发送错误'.format(count) + now_time + "Falied, {}".format(e))
+                # print('第{}次发送错误'.format(count) + now_time + "Falied, {}".format(e))
+                self.log.logger.error('第{}次发送错误'.format(count) + "Falied, {}".format(e))

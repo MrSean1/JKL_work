@@ -325,6 +325,7 @@ class Account:
             return False
 
     def write_data_for_file(self, prod_code):
+        count = 1
         while True:
             try:
                 ret = requests.get(self.__rest_root + "/price/{}/{}".format(self.account, prod_code), timeout=5).json()
@@ -339,21 +340,34 @@ class Account:
                 cur_path = os.getcwd() + os.path.sep + 'data'
                 file_name = date.strftime(
                     '%Y-%m-%d') + '_' + prod_code + '.csv'
+                # if  price == 0 and quantity == 0:
+                #     time.sleep(1)
+                #     continue
                 if os.path.exists(cur_path):
                     if not os.path.exists(cur_path + os.path.sep + prod_code):
                         os.mkdir(cur_path + os.path.sep + prod_code)
                 else:
                     os.makedirs(cur_path + os.path.sep + prod_code)
-                data = [[prod_code, price, quantity, date]]
+                data_new = [[prod_code, price, quantity, date]]
+                if count == 1:
+                    data_old = data_new
+                else:
+                    if data_old == data_new:
+                        self.log.logger.info('appear same data, data_old={}, data_new={}'.format(data_old, data_new))
+                        # 睡一秒再继续进行
+                        time.sleep(1)
+                        continue
+                    else:
+                        data_old = data_new
                 # print(curPath + os.path.sep + prodCode + os.path.sep + fileName)
                 try:
                     csv.reader(open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, encoding='utf-8'))
-                    save_data = pd.DataFrame(data)
+                    save_data = pd.DataFrame(data_new)
                     save_data.to_csv(cur_path + os.path.sep + prod_code + os.path.sep + file_name, header=False,
                                      index=False, mode='a+',
                                      encoding='utf-8')
                 except:
-                    save_data = pd.DataFrame(data)
+                    save_data = pd.DataFrame(data_new)
                     csv_headers = ['Type', 'Price', 'quantity', 'date']
                     save_data.to_csv(cur_path + os.path.sep + prod_code + os.path.sep + file_name, header=csv_headers,
                                      index=False,
@@ -366,6 +380,7 @@ class Account:
                 self.log.logger.error(prod_code + '存储失败')
                 break
             time.sleep(1)
+            count += 1
         return False
 
     def get_data(self, prod_code):
