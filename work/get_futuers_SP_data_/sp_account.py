@@ -340,9 +340,9 @@ class Account:
                 cur_path = os.getcwd() + os.path.sep + 'data'
                 file_name = date.strftime(
                     '%Y-%m-%d') + '_' + prod_code + '.csv'
-                # if  price == 0 and quantity == 0:
-                #     time.sleep(1)
-                #     continue
+                if price == 0 and quantity == 0:
+                    time.sleep(1)
+                    continue
                 if os.path.exists(cur_path):
                     if not os.path.exists(cur_path + os.path.sep + prod_code):
                         os.mkdir(cur_path + os.path.sep + prod_code)
