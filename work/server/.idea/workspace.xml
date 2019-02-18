@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e26bda3-9e0f-486b-8e46-31a5e0af57b0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../DKL/提示信息.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../DKL/提示信息.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../futures/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../futures/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../futures/Account/get_sp_data_for_kline.py" beforeDir="false" afterPath="$PROJECT_DIR$/../futures/Account/get_sp_data_for_kline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../futures/Account/sp_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/../futures/Account/sp_account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../futures/checkupdata_for_SP.py" beforeDir="false" afterPath="$PROJECT_DIR$/../futures/checkupdata_for_SP.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/dictionaries/1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/data/YMH9/2019-02-17_YMH9.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/get_futuers_SP_data_.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/get_futuers_SP_data_.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/data/HOK9/2019-01-15_HOK9.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/data/HOK9/2019-01-15_HOK9.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/all.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/get_data_futures.py" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/get_data_futures.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/send_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/send_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/sp_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/sp_account.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,8 +113,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="230" />
-    <option name="y" value="19" />
+    <option name="x" value="117" />
+    <option name="y" value="36" />
     <option name="width" value="1605" />
     <option name="height" value="960" />
   </component>
@@ -160,7 +157,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../get_futuers_SP_data_" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -192,7 +189,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="230" y="19" width="1605" height="960" extended-state="1" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1592233" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
