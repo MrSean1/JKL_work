@@ -22,7 +22,7 @@ class Email:
     def send_email(self, message, title):
         count = 0
         while count < 5:
-            now_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            # now_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             try:
                 message_em = MIMEText(message)
                 message_em['From'] = self.em_user

@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e26bda3-9e0f-486b-8e46-31a5e0af57b0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/dictionaries/1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/data/YMH9/2019-02-17_YMH9.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/get_futuers_SP_data_.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/get_futuers_SP_data_.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/Log.py" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/Log.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/all.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/get_data_futures.py" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/get_data_futures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/send_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/send_email.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/sp_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/sp_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ex_api/send_email/write_email.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+            <state relative-caret-position="125">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -131,23 +128,6 @@
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="ex_api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="ex_api" type="462c0819:PsiDirectoryNode" />
-              <item name="send_email" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="ex_api" type="462c0819:PsiDirectoryNode" />
-              <item name="short_message" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -189,8 +169,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="117" y="36" width="1605" height="960" extended-state="1" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1592233" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1592233" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -205,7 +186,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="12" visible="true" weight="0.32969698" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -261,8 +242,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ex_api/send_email/write_email.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        <state relative-caret-position="125">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

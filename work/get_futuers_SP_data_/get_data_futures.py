@@ -5,7 +5,7 @@ import time
 from sp_account import Account
 from send_email import Email
 
-product_list = ["YMH9", "HSIZ8", "HSIF9", "SSIH9"]
+product_list = ["YMH9", "HSIH9", "SSIH9"]
 em_user = '295861809@qq.com'
 pwd = 'irzrbrekyaldbicf'
 address = ['295861809@qq.com', ]
@@ -13,7 +13,7 @@ smtp_server = 'smtp.qq.com'
 
 
 def run(prod_code):
-    sp_account = Account('73883669')
+    sp_account = Account('DEMO201901267')
     time.sleep(5)
     while True:
         ret = sp_account.write_data_for_file(prod_code)

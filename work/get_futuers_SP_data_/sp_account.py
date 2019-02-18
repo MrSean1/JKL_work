@@ -95,7 +95,7 @@ class Account:
                 self.maintain_margin = msg['mmargin']  # 维持保证金
         except Exception as e:
             # print(e)
-            self.log.logger.error(msg)
+            self.log.logger.error(e)
 
     def get_orders(self):
         """
@@ -353,9 +353,10 @@ class Account:
                     data_old = data_new
                 else:
                     if data_old == data_new:
-                        self.log.logger.info('appear same data, data_old={}, data_new={}'.format(data_old, data_new))
+                        # self.log.logger.info('appear same data, data_old={}, data_new={}'.format(data_old, data_new))
                         # 睡一秒再继续进行
                         time.sleep(1)
+                        count += 1
                         continue
                     else:
                         data_old = data_new
