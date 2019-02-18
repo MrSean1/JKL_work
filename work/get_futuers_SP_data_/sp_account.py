@@ -363,8 +363,11 @@ class Account:
                         data_old = data_new
                 # print(curPath + os.path.sep + prodCode + os.path.sep + fileName)
                 try:
+                    with open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, 'r') as f:
+                        f.read()
                     with open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, 'a+') as f:
                         f.write(data_new)
+                    self.log.logger.info('save a data data_new=%s'%data_new)
                     # csv.reader(open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, encoding='utf-8'))
                     # save_data = pd.DataFrame(data_new)
                     # save_data.to_csv(cur_path + os.path.sep + prod_code + os.path.sep + file_name, header=False,
