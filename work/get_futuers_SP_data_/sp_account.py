@@ -372,9 +372,9 @@ class Account:
                     #                  encoding='utf-8')
                 except:
                     headers = "Type, Price, quantity, date\n"
+                    data = headers + data_new
                     with open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, 'w') as f:
-                        f.write(headers)
-                        f.write(data_new)
+                        f.write(data)
                     # save_data = pd.DataFrame(data_new)
                     # csv_headers = ['Type', 'Price', 'quantity', 'date']
                     # save_data.to_csv(cur_path + os.path.sep + prod_code + os.path.sep + file_name, header=csv_headers,

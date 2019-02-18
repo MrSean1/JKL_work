@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01fce4ed-858d-423a-bd5c-d099eaee5e41" name="Default Changelist" comment="add Email and del same data">
+    <list default="true" id="01fce4ed-858d-423a-bd5c-d099eaee5e41" name="Default Changelist" comment="with replace pandas">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sp_account.py" afterPath="$PROJECT_DIR$/sp_account.py" />
     </list>
@@ -61,9 +61,11 @@
       <file leaf-file-name="sp_account.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sp_account.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="294">
+              <caret line="367" column="78" lean-forward="false" selection-start-line="367" selection-start-column="78" selection-end-line="367" selection-end-column="78" />
+              <folding>
+                <element signature="e#22#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="get_data_futures.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="get_data_futures.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/get_data_futures.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="567">
+              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#22#38#0" expanded="true" />
               </folding>
@@ -113,6 +115,15 @@
                 <element signature="e#0#9#0" expanded="true" />
                 <marker date="1550490266044" expanded="true" signature="257:1434" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all.log" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/all.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
             </state>
           </provider>
         </entry>
@@ -147,9 +158,9 @@
         <option value="$PROJECT_DIR$/log_test.py" />
         <option value="$PROJECT_DIR$/get_data_futures.py" />
         <option value="$PROJECT_DIR$/data/YMH9/2019-02-17_YMH9.csv" />
-        <option value="$PROJECT_DIR$/all.log" />
         <option value="$PROJECT_DIR$/send_email.py" />
         <option value="$PROJECT_DIR$/sp_account.py" />
+        <option value="$PROJECT_DIR$/all.log" />
       </list>
     </option>
   </component>
@@ -160,8 +171,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="214" />
-    <option name="y" value="26" />
+    <option name="x" value="54" />
+    <option name="y" value="19" />
     <option name="width" value="1530" />
     <option name="height" value="954" />
   </component>
@@ -439,15 +450,23 @@
       <option name="project" value="LOCAL" />
       <updated>1550200695066</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="with replace pandas">
+      <created>1550494962247</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1550494962247</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13519314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26136363" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26136363" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26136363" sideWeight="0.49785408" order="7" side_tool="false" content_ui="tabs" />
@@ -496,7 +515,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="抓取期货数据" />
     <MESSAGE value="add Email and del same data" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Email and del same data" />
+    <MESSAGE value="with replace pandas" />
+    <option name="LAST_COMMIT_MESSAGE" value="with replace pandas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -509,7 +529,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#22#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -586,7 +608,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="19" column="51" lean-forward="false" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-          <folding />
+          <folding>
+            <element signature="e#22#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -642,7 +666,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="19" column="51" lean-forward="true" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
-          <folding />
+          <folding>
+            <element signature="e#22#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -754,13 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/all.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../server/ex_api/send_email/write_email.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -768,14 +787,6 @@
           <folding>
             <element signature="e#0#9#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sp_account.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -812,11 +823,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/get_data_futures.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="567">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#22#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sp_account.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="367" column="78" lean-forward="false" selection-start-line="367" selection-start-column="78" selection-end-line="367" selection-end-column="78" />
+          <folding>
+            <element signature="e#22#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
