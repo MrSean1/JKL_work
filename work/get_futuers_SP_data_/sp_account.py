@@ -6,7 +6,7 @@ import os
 import threading
 import time
 from Log import Logger
-import pandas as pd
+# import pandas as pd
 import requests
 
 # account = 'DEMO201812037'
@@ -348,7 +348,8 @@ class Account:
                         os.mkdir(cur_path + os.path.sep + prod_code)
                 else:
                     os.makedirs(cur_path + os.path.sep + prod_code)
-                data_new = [[prod_code, price, quantity, date]]
+                # data_new = [[prod_code, price, quantity, date]]
+                data_new = '{}, {}, {}, {}\n'.format(prod_code, price, quantity, str(date))
                 if count == 1:
                     data_old = data_new
                 else:
@@ -362,17 +363,23 @@ class Account:
                         data_old = data_new
                 # print(curPath + os.path.sep + prodCode + os.path.sep + fileName)
                 try:
-                    csv.reader(open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, encoding='utf-8'))
-                    save_data = pd.DataFrame(data_new)
-                    save_data.to_csv(cur_path + os.path.sep + prod_code + os.path.sep + file_name, header=False,
-                                     index=False, mode='a+',
-                                     encoding='utf-8')
+                    with open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, 'a+') as f:
+                        f.write(data_new)
+                    # csv.reader(open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, encoding='utf-8'))
+                    # save_data = pd.DataFrame(data_new)
+                    # save_data.to_csv(cur_path + os.path.sep + prod_code + os.path.sep + file_name, header=False,
+                    #                  index=False, mode='a+',
+                    #                  encoding='utf-8')
                 except:
-                    save_data = pd.DataFrame(data_new)
-                    csv_headers = ['Type', 'Price', 'quantity', 'date']
-                    save_data.to_csv(cur_path + os.path.sep + prod_code + os.path.sep + file_name, header=csv_headers,
-                                     index=False,
-                                     mode='a+', encoding='utf-8')
+                    headers = "Type, Price, quantity, date\n"
+                    with open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, 'w') as f:
+                        f.write(headers)
+                        f.write(data_new)
+                    # save_data = pd.DataFrame(data_new)
+                    # csv_headers = ['Type', 'Price', 'quantity', 'date']
+                    # save_data.to_csv(cur_path + os.path.sep + prod_code + os.path.sep + file_name, header=csv_headers,
+                    #                  index=False,
+                    #                  mode='a+', encoding='utf-8')
                 # 存储数据
             except Exception as e:
                 # print(e)
