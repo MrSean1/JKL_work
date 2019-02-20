@@ -44,22 +44,22 @@ if __name__ == '__main__':
     log.logger.critical('严重')
     Logger('error.log', level='error').logger.error('error')
 
-import threading
-
-
-def a():
-    i = 0
-    while True:
-        try:
-            i += 1
-            if i == 100000:
-                raise ValueError
-        except ValueError:
-            print('出错了')
-            break
-    return '完了'
-
-
-c = threading.Thread(target=a, args=())
-c.start()
-print(c)
+# import threading
+#
+#
+# def a():
+#     i = 0
+#     while True:
+#         try:
+#             i += 1
+#             if i == 100000:
+#                 raise ValueError
+#         except ValueError:
+#             print('出错了')
+#             break
+#     return '完了'
+#
+#
+# c = threading.Thread(target=a, args=())
+# c.start()
+# print(c)

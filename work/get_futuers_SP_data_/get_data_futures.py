@@ -4,29 +4,30 @@ import time
 
 from sp_account import Account
 from send_email import Email
-
-product_list = ["YMH9", "HSIH9", "SSIH9"]
-em_user = '295861809@qq.com'
-pwd = 'irzrbrekyaldbicf'
-address = ['295861809@qq.com', ]
-smtp_server = 'smtp.qq.com'
+from config import *
 
 
 def run(prod_code):
-    sp_account = Account('DEMO201901267')
+    sp_account = Account(account)
     time.sleep(5)
     while True:
         ret = sp_account.write_data_for_file(prod_code)
         if ret is False:
+            time.sleep(1)
             msg = sp_account.login()
             if msg is False:
                 # 发邮件提醒
-                email_msg = '登陆失败，请检测是程序出错还是服务出错\n，' + msg
+                email_msg = '登陆失败，请检测是程序出错还是服务出错\n，' + str(msg)
                 email_title = 'SP数据抓取问题'
-                Email(em_user=em_user, pwd=pwd, address=address, smtp_server=smtp_server).send_email(message=email_msg,
-                                                                                                     title=email_title)
+                try:
+                    Email(em_user=em_user, pwd=pwd, address=address, smtp_server=smtp_server).send_email(
+                        message=email_msg,
+                        title=email_title)
+                except Exception as e:
+                    log.logger.error(e)
                 break
             else:
+                time.sleep(2)
                 continue
 
 
