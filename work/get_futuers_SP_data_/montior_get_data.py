@@ -21,7 +21,7 @@ def main():
     else:
         log.logger.error('process get_data_futures deth')
         log.logger.info('正在准备重启')
-        restart_process = 'python ' + restart_process_path
+        restart_process = 'start /b python ' + restart_process_path
         try:
             os.system(restart_process)
             log.logger.info('已经重启')

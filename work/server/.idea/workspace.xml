@@ -4,6 +4,8 @@
     <list default="true" id="0e26bda3-9e0f-486b-8e46-31a5e0af57b0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../DKL/windows_system.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../DKL/windows_system.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/all.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../get_futuers_SP_data_/get_data_futures.py" beforeDir="false" afterPath="$PROJECT_DIR$/../get_futuers_SP_data_/get_data_futures.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,7 +18,7 @@
     <session id="925146661">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="3" />
@@ -75,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/ex_api/send_email/write_email.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -106,7 +108,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="117" />
     <option name="y" value="36" />
     <option name="width" value="1605" />
@@ -165,8 +167,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="117" y="36" width="1605" height="960" extended-state="1" />
-    <editor active="true" />
+    <frame x="117" y="36" width="1605" height="960" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1592233" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -240,7 +241,7 @@
     <entry file="file://$PROJECT_DIR$/ex_api/send_email/write_email.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

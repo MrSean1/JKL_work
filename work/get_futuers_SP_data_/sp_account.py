@@ -5,7 +5,6 @@ import json
 import os
 import threading
 import time
-from Log import Logger
 # import pandas as pd
 import requests
 from config import *
@@ -57,7 +56,7 @@ class Account:
             log.logger.debug(self.__rest_root + "/login/{}".format(self.account))
             ret = requests.get(self.__rest_root + "/login/{}".format(self.account), timeout=5).json()
             # print(self.__dispose_info(ret))
-            log.logger.info(str(self.__dispose_info(ret)))
+            log.logger.info(self.__dispose_info(ret))
             return self.__dispose_info(ret)
         except Exception as e:
             # print(e)
@@ -110,7 +109,8 @@ class Account:
                     self.order_status = 1
                 return order_list
             else:
-                if msg == '没有订单':
+
+                if msg == '没有订单'.decode('utf-8'):
                     self.order_status = 0
                 # print(ret)
                 log.logger.info(str(ret))
