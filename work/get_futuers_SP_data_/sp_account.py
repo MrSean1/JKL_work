@@ -5,10 +5,9 @@ import json
 import os
 import threading
 import time
-from Log import Logger
 # import pandas as pd
 import requests
-
+from config import *
 # account = 'DEMO201812037'
 # a = Account('73883669')
 
@@ -17,7 +16,6 @@ product_list = ["YMH9", "HSI8", "HSIF9", "SSIH9"]
 
 class Account:
     def __init__(self, account):
-        self.log = Logger('all.log', level='debug')
         self.account = account
         self.balance = 0  # 总余额
         self.margin = 0  # 已使用保证金
@@ -50,29 +48,29 @@ class Account:
             return ret['data']
         else:
             # print(ret)
-            self.log.logger.error(ret)
+            log.logger.error(ret)
             return 'error'
 
     def login(self):
         try:
-            self.log.logger.debug(self.__rest_root + "/login/{}".format(self.account))
+            log.logger.debug(self.__rest_root + "/login/{}".format(self.account))
             ret = requests.get(self.__rest_root + "/login/{}".format(self.account), timeout=5).json()
             # print(self.__dispose_info(ret))
-            self.log.logger.info(str(self.__dispose_info(ret)))
+            log.logger.info(self.__dispose_info(ret))
             return self.__dispose_info(ret)
         except Exception as e:
             # print(e)
-            self.log.logger.error(e)
+            log.logger.error(e)
             return False
 
     def logout(self):
         try:
             ret = requests.get(self.__rest_root + '/logout/{}'.format(self.account), timeout=5).json()
             # print(self.__dispose_info(ret))
-            self.log.logger.info(self.__dispose_info(ret))
+            log.logger.info(self.__dispose_info(ret))
         except Exception as e:
             # print(e)
-            self.log.logger.error(e)
+            log.logger.error(e)
 
     def get_account(self):
         """
@@ -87,7 +85,7 @@ class Account:
             ret = requests.get(self.__rest_root + "/accInfo/{}".format(self.account), timeout=5).json()
             msg = self.__dispose_info(ret)
             # print(msg)
-            self.log.logger.info(msg=msg)
+            log.logger.info(msg=msg)
             if msg is not 'error':
                 self.balance = msg['nav']
                 self.margin = msg['iMargin']
@@ -95,7 +93,7 @@ class Account:
                 self.maintain_margin = msg['mmargin']  # 维持保证金
         except Exception as e:
             # print(e)
-            self.log.logger.error(e)
+            log.logger.error(e)
 
     def get_orders(self):
         """
@@ -111,13 +109,14 @@ class Account:
                     self.order_status = 1
                 return order_list
             else:
-                if msg == '没有订单':
+
+                if msg == '没有订单'.decode('utf-8'):
                     self.order_status = 0
                 # print(ret)
-                self.log.logger.info(str(ret))
+                log.logger.info(str(ret))
         except Exception as e:
             # print(e)
-            self.log.logger.error(e)
+            log.logger.error(e)
             return False
 
     def get_trade_order(self):
@@ -132,7 +131,7 @@ class Account:
             return self.__dispose_info(ret)
         except Exception as e:
             # print(e)
-            self.log.logger.error(e)
+            log.logger.error(e)
             return False
 
     def get_order(self, order_id):
@@ -144,7 +143,7 @@ class Account:
             ret = requests.get(self.__rest_root + "/getOrder/{}/{}".format(self.account, order_id), timeout=5).json()
             return self.__dispose_info(ret)
         except Exception as e:
-            self.log.logger.error(e)
+            log.logger.error(e)
             return False
 
     def add_order(self, order_type, prod_code, side, quantity, price=0, order_options=0, valid_type=0,
@@ -166,7 +165,7 @@ class Account:
             dec_in_price = dec_dic[prod_code[0:-2]]
         else:
             # print('没有此类商品的精度')
-            self.log.logger.error('没有此类商品的精度')
+            log.logger.error('没有此类商品的精度')
             raise ValueError
         if prod_code[0:-2] == "HSI":
             order_options = 1
@@ -189,7 +188,7 @@ class Account:
             return self.__dispose_info(ret)
         except Exception as e:
             # print(e)
-            self.log.logger.error(e)
+            log.logger.error(e)
             return False
 
     def cancel_all(self):
@@ -200,11 +199,11 @@ class Account:
         try:
             ret = requests.get(self.__rest_root + '/deleteAllOrder/{}'.format(self.account), timeout=5).json()
             # print(ret)
-            self.log.logger.info(ret)
+            log.logger.info(ret)
             return self.__dispose_info(ret)
         except Exception as e:
             # print(e)
-            self.log.logger.error(e)
+            log.logger.error(e)
             return False
 
     def cancel_order(self, order_id, prod_code, cl_order_id=''):
@@ -222,7 +221,7 @@ class Account:
             return self.__dispose_info(ret)
         except Exception as e:
             # print(e)
-            self.log.logger.error(e)
+            log.logger.error(e)
             return False
 
     def check_position(self, prod_code):
@@ -241,7 +240,7 @@ class Account:
             return msg
         except Exception as e:
             # print(e)
-            self.log.logger.error(e)
+            log.logger.error(e)
             return False
 
     def check_all_position(self):
@@ -272,7 +271,7 @@ class Account:
                 return self.pos
         except Exception as e:
             # print(e)
-            self.log.logger.error(e)
+            log.logger.error(e)
             return False
 
     def subscription(self, prod_code, subscribe='price', mode=1):
@@ -289,13 +288,13 @@ class Account:
             msg = self.__dispose_info(ret)
             if msg == '订阅成功':
                 # print(msg)
-                self.log.logger.info(msg)
+                log.logger.info(msg)
             else:
                 # print(ret)
-                self.log.logger.info(msg)
+                log.logger.info(msg)
         except Exception as e:
             # print(e)
-            self.log.logger.error(e)
+            log.logger.error(e)
             return False
 
     def get_depth(self, prod_code):
@@ -321,7 +320,7 @@ class Account:
             return depth_dic
         except Exception as e:
             # print(e)
-            self.log.logger.error(e)
+            log.logger.error(e)
             return False
 
     def write_data_for_file(self, prod_code):
@@ -354,7 +353,7 @@ class Account:
                     data_old = data_new
                 else:
                     if data_old == data_new:
-                        # self.log.logger.info('appear same data, data_old={}, data_new={}'.format(data_old, data_new))
+                        # log.logger.info('appear same data, data_old={}, data_new={}'.format(data_old, data_new))
                         # 睡一秒再继续进行
                         time.sleep(1)
                         count += 1
@@ -367,7 +366,7 @@ class Account:
                         f.read()
                     with open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, 'a+') as f:
                         f.write(data_new)
-                    self.log.logger.info('save a data data_new=%s'%data_new)
+                    log.logger.info('save a data data_new=%s'%data_new)
                     # csv.reader(open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, encoding='utf-8'))
                     # save_data = pd.DataFrame(data_new)
                     # save_data.to_csv(cur_path + os.path.sep + prod_code + os.path.sep + file_name, header=False,
@@ -386,48 +385,48 @@ class Account:
                 # 存储数据
             except Exception as e:
                 # print(e)
-                self.log.logger.error(e)
+                log.logger.error(e)
                 # print(prod_code + '存储失败')
-                self.log.logger.error(prod_code + '存储失败')
+                log.logger.error(prod_code + '存储失败')
                 break
             time.sleep(1)
             count += 1
         return False
 
     def get_data(self, prod_code):
-        self.log.logger.info('开始抓取数据')
+        log.logger.info('开始抓取数据')
         th = threading.Thread(target=self.write_data_for_file, args=(prod_code,))
         th.start()
 
     # @staticmethod
-    def get_kline(self, prod_code):
-        date = datetime.datetime.now()
-        cur_path = os.getcwd() + os.path.sep + 'data' + os.path.sep + prod_code + os.path.sep + date.strftime(
-            '%Y-%m-%d') + '_' + prod_code + '.csv'
-        if not os.path.exists(cur_path):
-            # print(prod_code + '找不到当天的数据，')
-            self.log.logger.warning(prod_code + '找不到当天的数据，')
-            return False
-        else:
-            df = pd.read_csv(cur_path)
-            start_time = datetime.datetime(date.year, date.month, date.day, date.hour, date.minute)
-            index_list = []
-            count = 0
-            for i in df['date']:
-                if (start_time + datetime.timedelta(minutes=1)) > datetime.datetime.strptime(i,
-                                                                                             '%Y-%m-%d %H:%M:%S') >= start_time:
-                    index_list.append(count)
-                    count += 1
-                else:
-                    count += 1
-            if index_list:
-                kline_data = df[min(index_list):max(index_list) + 1]
-                # print(kline_data)
-                kline = [kline_data['Price'][min(index_list)], max(kline_data['Price']), min(kline_data['Price']),
-                         kline_data['Price'][max(index_list)], sum(kline_data['quantity']),
-                         start_time.strftime('%Y-%m-%d %H:%M:%S')]
-                return kline
-            else:
-                # print(start_time.strftime('%Y-%m-%d %H:%M:%S') + '没有抓到这一分钟的数据')
-                self.log.logger.warning('没有抓到这一分钟的数据')
-                return False
+    # def get_kline(self, prod_code):
+    #     date = datetime.datetime.now()
+    #     cur_path = os.getcwd() + os.path.sep + 'data' + os.path.sep + prod_code + os.path.sep + date.strftime(
+    #         '%Y-%m-%d') + '_' + prod_code + '.csv'
+    #     if not os.path.exists(cur_path):
+    #         # print(prod_code + '找不到当天的数据，')
+    #         log.logger.warning(prod_code + '找不到当天的数据，')
+    #         return False
+    #     else:
+    #         df = pd.read_csv(cur_path)
+    #         start_time = datetime.datetime(date.year, date.month, date.day, date.hour, date.minute)
+    #         index_list = []
+    #         count = 0
+    #         for i in df['date']:
+    #             if (start_time + datetime.timedelta(minutes=1)) > datetime.datetime.strptime(i,
+    #                                                                                          '%Y-%m-%d %H:%M:%S') >= start_time:
+    #                 index_list.append(count)
+    #                 count += 1
+    #             else:
+    #                 count += 1
+    #         if index_list:
+    #             kline_data = df[min(index_list):max(index_list) + 1]
+    #             # print(kline_data)
+    #             kline = [kline_data['Price'][min(index_list)], max(kline_data['Price']), min(kline_data['Price']),
+    #                      kline_data['Price'][max(index_list)], sum(kline_data['quantity']),
+    #                      start_time.strftime('%Y-%m-%d %H:%M:%S')]
+    #             return kline
+    #         else:
+    #             # print(start_time.strftime('%Y-%m-%d %H:%M:%S') + '没有抓到这一分钟的数据')
+    #             log.logger.warning('没有抓到这一分钟的数据')
+    #             return False
