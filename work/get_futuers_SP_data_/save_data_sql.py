@@ -45,6 +45,10 @@ def main(table_name, prod_code):
 
 
 def write_sql_data(msg):
+    """
+    :param msg: 文件中的数据
+    :return: 元组数据
+    """
     data_list = msg.split('\n')[1::]
     data_list = data_list[:-1]
     save_data = list()
