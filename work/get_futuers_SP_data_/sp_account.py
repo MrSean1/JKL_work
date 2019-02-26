@@ -10,6 +10,7 @@ import requests
 from config import *
 # account = 'DEMO201812037'
 # a = Account('73883669')
+from send_email import Email
 
 product_list = ["YMH9", "HSI8", "HSIF9", "SSIH9"]
 
@@ -307,6 +308,7 @@ class Account:
             ret = requests.get(self.__rest_root + "/price/{}/{}".format(self.account, prod_code), timeout=5).json()
             msg = self.__dispose_info(ret)
             # print(ret)
+            log.logger.info(ret)
             # print(msg)
             depth_dic = dict()
             depth_dic['bid'] = [b_price for b_price in msg['bid'] if b_price > 0]
@@ -325,10 +327,12 @@ class Account:
 
     def write_data_for_file(self, prod_code):
         count = 1
+        count_for_data_is_null = 0
         while True:
             try:
                 ret = requests.get(self.__rest_root + "/price/{}/{}".format(self.account, prod_code), timeout=5).json()
                 # print(ret)
+                log.logger.info(ret)
                 if ret['data']['timestamp'] == '0':
                     self.subscription(prod_code)
                     continue
@@ -340,6 +344,11 @@ class Account:
                 file_name = date.strftime(
                     '%Y-%m-%d') + '_' + prod_code + '.csv'
                 if price == 0 and quantity == 0:
+                    count_for_data_is_null += 1
+                    if count_for_data_is_null % 100 == 0:
+                        Email(em_user, pwd, address, smtp_server).send_email(message='sp数据出现100次为0的情况，请查看脚本是否出错',
+                                                                             title='sp数据为0出现')
+                        self.subscription(prod_code)
                     time.sleep(1)
                     continue
                 if os.path.exists(cur_path):
@@ -360,7 +369,6 @@ class Account:
                         continue
                     else:
                         data_old = data_new
-                # print(curPath + os.path.sep + prodCode + os.path.sep + fileName)
                 try:
                     with open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, 'r') as f:
                         f.read()
