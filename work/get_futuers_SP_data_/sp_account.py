@@ -8,9 +8,10 @@ import time
 # import pandas as pd
 import requests
 from config import *
+from send_email import Email
+
 # account = 'DEMO201812037'
 # a = Account('73883669')
-from send_email import Email
 
 product_list = ["YMH9", "HSI8", "HSIF9", "SSIH9"]
 
@@ -57,7 +58,7 @@ class Account:
             log.logger.debug(self.__rest_root + "/login/{}".format(self.account))
             ret = requests.get(self.__rest_root + "/login/{}".format(self.account), timeout=5).json()
             # print(self.__dispose_info(ret))
-            log.logger.info(self.__dispose_info(ret))
+            log.logger.info(str(self.__dispose_info(ret)))
             return self.__dispose_info(ret)
         except Exception as e:
             # print(e)
@@ -86,7 +87,7 @@ class Account:
             ret = requests.get(self.__rest_root + "/accInfo/{}".format(self.account), timeout=5).json()
             msg = self.__dispose_info(ret)
             # print(msg)
-            log.logger.info(msg=msg)
+            log.logger.info(msg=str(msg))
             if msg is not 'error':
                 self.balance = msg['nav']
                 self.margin = msg['iMargin']
@@ -110,8 +111,7 @@ class Account:
                     self.order_status = 1
                 return order_list
             else:
-
-                if msg == '没有订单'.decode('utf-8'):
+                if msg == '没有订单':
                     self.order_status = 0
                 # print(ret)
                 log.logger.info(str(ret))
@@ -346,9 +346,12 @@ class Account:
                 if price == 0 and quantity == 0:
                     count_for_data_is_null += 1
                     if count_for_data_is_null % 100 == 0:
-                        Email(em_user, pwd, address, smtp_server).send_email(message='sp数据出现100次为0的情况，请查看脚本是否出错',
-                                                                             title='sp数据为0出现')
+                        Email(em_user, pwd, address, smtp_server).send_email(
+                            message='{}sp数据出现100次为0的情况，请查看脚本是否出错,期货名称是{}'.format(str(datetime.datetime.now()),
+                                                                                 prod_code),
+                            title='sp数据为0出现')
                         self.subscription(prod_code)
+                        count_for_data_is_null += 1
                     time.sleep(1)
                     continue
                 if os.path.exists(cur_path):
@@ -374,7 +377,7 @@ class Account:
                         f.read()
                     with open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, 'a+') as f:
                         f.write(data_new)
-                    log.logger.info('save a data data_new=%s'%data_new)
+                    log.logger.info('save a data data_new=%s' % data_new)
                     # csv.reader(open(cur_path + os.path.sep + prod_code + os.path.sep + file_name, encoding='utf-8'))
                     # save_data = pd.DataFrame(data_new)
                     # save_data.to_csv(cur_path + os.path.sep + prod_code + os.path.sep + file_name, header=False,
