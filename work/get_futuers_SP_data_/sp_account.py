@@ -401,10 +401,10 @@ class Account:
             count += 1
         return False
 
-    def get_data(self, prod_code):
-        log.logger.info('开始抓取数据')
-        th = threading.Thread(target=self.write_data_for_file, args=(prod_code,))
-        th.start()
+    # def get_data(self, prod_code):
+    #     log.logger.info('开始抓取数据')
+    #     th = threading.Thread(target=self.write_data_for_file, args=(prod_code,))
+    #     th.start()
 
     # @staticmethod
     # def get_kline(self, prod_code):
