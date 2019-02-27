@@ -2,7 +2,7 @@
 from Log import Logger
 
 account = '1001524403'
-log = Logger('all.log', level='info')
+log = Logger('log/all.log', level='info')
 product_list = ["YMH9", "HSIH9", "SSIH9"]
 em_user = '295861809@qq.com'
 pwd = 'qxkrwbmoxosdbhfi'

@@ -51,7 +51,7 @@ class Account:
         else:
             # print(ret)
             log.logger.error(ret)
-            return 'error'
+            return False
 
     def login(self):
         try:
@@ -88,7 +88,7 @@ class Account:
             msg = self.__dispose_info(ret)
             # print(msg)
             log.logger.info(msg=str(msg))
-            if msg is not 'error':
+            if msg:
                 self.balance = msg['nav']
                 self.margin = msg['iMargin']
                 self.buy_power = msg['buyingPower']
@@ -105,7 +105,7 @@ class Account:
         try:
             ret = requests.get(self.__rest_root + '/getOrders/{}'.format(self.account), timeout=5).json()
             msg = self.__dispose_info(ret)
-            if msg is not 'error' and type(msg) is list:
+            if msg and type(msg) is list:
                 order_list = [i for i in msg if i['status'] == 1]
                 if order_list:
                     self.order_status = 1
@@ -252,7 +252,7 @@ class Account:
         try:
             ret = requests.get(self.__rest_root + '/allPos/{}'.format(self.account), timeout=5).json()
             msg = self.__dispose_info(ret)
-            if msg is not 'error' and type(msg) is list:
+            if msg and type(msg) is list:
                 for i in msg:
                     if chr(i['longShort']) == 'B':
                         i['q'] = i['qty'] + i['longQty'] - i['shortQty']
@@ -332,7 +332,16 @@ class Account:
             try:
                 ret = requests.get(self.__rest_root + "/price/{}/{}".format(self.account, prod_code), timeout=5).json()
                 # print(ret)
-                log.logger.info(ret)
+                result = self.__dispose_info(ret)
+                if result is False:
+                    log.logger.info(ret)
+                    Email(em_user, pwd, address, smtp_server).send_email(
+                        message='{}sp数据抓取出现错误，请查看脚本日志,期货名称是{}，错误信息是{}'.format(str(datetime.datetime.now()),
+                                                                             prod_code, str(ret)),
+                        title='sp获取数据接口出错')
+                    self.subscription(prod_code)
+                    time.sleep(1)
+                    break
                 if ret['data']['timestamp'] == '0':
                     self.subscription(prod_code)
                     continue
@@ -399,6 +408,10 @@ class Account:
                 log.logger.error(e)
                 # print(prod_code + '存储失败')
                 log.logger.error(prod_code + '存储失败')
+                Email(em_user, pwd, address, smtp_server).send_email(
+                    message='{}sp数据存储失败,期货名称是{}'.format(str(datetime.datetime.now()),
+                                                        prod_code),
+                    title='sp数据存储失败')
                 break
             time.sleep(1)
             count += 1

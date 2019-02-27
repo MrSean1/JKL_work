@@ -6,9 +6,10 @@ from sp_account import Account
 from send_email import Email
 from config import *
 
+sp_account = Account(account)
+
 
 def run(prod_code):
-    sp_account = Account(account)
     time.sleep(5)
     while True:
         ret = sp_account.write_data_for_file(prod_code)
@@ -28,6 +29,7 @@ def run(prod_code):
                 break
             else:
                 time.sleep(2)
+                sp_account.subscription(prod_code)
                 continue
 
 
