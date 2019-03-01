@@ -356,9 +356,10 @@ class Account:
                     count_for_data_is_null += 1
                     if count_for_data_is_null % 100 == 0:
                         Email(em_user, pwd, address, smtp_server).send_email(
-                            message='{}sp数据出现100次为0的情况，请查看脚本是否出错,期货名称是{}'.format(str(datetime.datetime.now()),
-                                                                                 prod_code),
+                            message='{}sp数据出现100次为0的情况，请查看脚本是否出错,期货名称是{},错误信息是{}'.format(str(datetime.datetime.now()),
+                                                                                         prod_code, str(ret)),
                             title='sp数据为0出现')
+                        log.logger.error('prod_code:{}, msg: {}'.format(prod_code, ret))
                         self.subscription(prod_code)
                         count_for_data_is_null += 1
                     time.sleep(1)
