@@ -19,3 +19,9 @@ MT4
 localhost mysql
 		A temporary password is generated for root@localhost: uyIJsZk6qP<Z
 		修改为mima123456
+
+【git服务器】
+		119.23.44.193(弹性)
+		172.18.158.169(私有)
+		root
+		Fi1JYrN26bhdDpfsoWTvC4xl385ZQj

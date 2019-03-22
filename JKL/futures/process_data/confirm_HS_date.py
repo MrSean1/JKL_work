@@ -1,8 +1,6 @@
 # *_*coding:utf-8 *_*
 import datetime
-import ssl
 import time
-import requests
 # 获取农历日历的接口
 # requests.get('https://www.sojson.com/open/api/lunar/json.shtml?date=2016-2-3')
 from selenium import webdriver
@@ -24,7 +22,7 @@ def get_HongKong_holiday(year):
             festival_and_date += holiday.split('\n')
     count = 1
     festival_dic = dict()
-    with open('HS_holiday.txt', 'r', encoding='utf-8') as f:
+    with open('HS_holiday.txt', 'r',) as f:
         festival_dic_for_year = f.read()
     if festival_dic_for_year:
         festival_dic_for_year = eval(festival_dic_for_year)
@@ -40,12 +38,12 @@ def get_HongKong_holiday(year):
             festival_dic[date] = festival
         count += 1
     festival_dic_for_year[year] = festival_dic
-    with open('HS_holiday.txt', 'w', encoding='utf-8') as f:
+    with open('HS_holiday.txt', 'w',) as f:
         f.write(str(festival_dic_for_year))
     print('数据已经写进日期文件中')
 
 
-class Confirm_HS_Date():
+class ConfirmHSDate:
     def __init__(self, date):
         self.date = date
 
@@ -185,10 +183,10 @@ class Confirm_HS_Date():
             return ret
 
     def __rest_day(self, date):
-        '''
+        """
         判断是否在休息日
         :return: 是休息日 False 不是休息日 True
-        '''
+        """
         # 计算元旦放假时间
         week = date.weekday()
         if week == 5 or week == 6:
@@ -205,12 +203,13 @@ class Confirm_HS_Date():
                 else:
                     get_HongKong_holiday(date.year)
 
-    def __read_holiday_for_dic(self):
-        with open('HS_holiday.txt', 'r', encoding='utf-8') as f:
+    @staticmethod
+    def __read_holiday_for_dic():
+        with open('HS_holiday.txt', 'r') as f:
             holiday = f.read()
         holiday_dic = eval(holiday)
         return holiday_dic
 
 
-a = Confirm_HS_Date('2015/12/31 07:02:00')
+a = ConfirmHSDate('2019/2/28 07:02:00')
 a.judge_date_in_trade_time()

@@ -340,7 +340,7 @@ class Account:
                                                                              prod_code, str(ret)),
                         title='sp获取数据接口出错')
                     self.subscription(prod_code)
-                    time.sleep(1)
+                    time.sleep(0.5)
                     break
                 if ret['data']['timestamp'] == '0':
                     self.subscription(prod_code)
@@ -354,7 +354,7 @@ class Account:
                     '%Y-%m-%d') + '_' + prod_code + '.csv'
                 if price == 0 and quantity == 0:
                     count_for_data_is_null += 1
-                    if count_for_data_is_null % 100 == 0:
+                    if count_for_data_is_null % 1000 == 0:
                         Email(em_user, pwd, address, smtp_server).send_email(
                             message='{}sp数据出现100次为0的情况，请查看脚本是否出错,期货名称是{},错误信息是{}'.format(str(datetime.datetime.now()),
                                                                                          prod_code, str(ret)),
@@ -362,7 +362,7 @@ class Account:
                         log.logger.error('prod_code:{}, msg: {}'.format(prod_code, ret))
                         self.subscription(prod_code)
                         count_for_data_is_null += 1
-                    time.sleep(1)
+                    time.sleep(0.5)
                     continue
                 if os.path.exists(cur_path):
                     if not os.path.exists(cur_path + os.path.sep + prod_code):
@@ -377,7 +377,7 @@ class Account:
                     if data_old == data_new:
                         # log.logger.info('appear same data, data_old={}, data_new={}'.format(data_old, data_new))
                         # 睡一秒再继续进行
-                        time.sleep(1)
+                        time.sleep(0.5)
                         count += 1
                         continue
                     else:
@@ -414,7 +414,7 @@ class Account:
                                                         prod_code),
                     title='sp数据存储失败')
                 break
-            time.sleep(1)
+            time.sleep(0.5)
             count += 1
         return False
 

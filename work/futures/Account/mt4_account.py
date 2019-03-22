@@ -4,7 +4,7 @@ import logging
 
 import requests
 
-# account = ["30266262", "30266263", "30275963", "30275964", "30275965"]
+# account = ["30266262", "30266263", "30275963", "30275964", "30275965", "30295272"]
 
 
 class MT4Account:
@@ -253,7 +253,7 @@ class MT4Account:
         try:
             ret = requests.get(self.__rest_root + '/orders/' + self.account, timeout=5).json()
             order_list = self.__dispose_info(ret)
-        except Exception as e:
+        except Exception as e: 
             print(e)
             order_list = 'error'
         if order_list is not 'error':
