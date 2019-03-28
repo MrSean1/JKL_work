@@ -303,28 +303,28 @@ class FallowAccount(MT4Account):
             print ('没有收到主账户订单变化信号')
 
 
-main_acc = MainAccount('30295272')
-fallow_acc = FallowAccount('30266262')
-
-
-def refresh():
-    while True:
-        ret = main_acc.check_update()
-        # if ret:
-        #     print ('副账户判断一次')
-        fallow_acc.check_and_update(ret)
-        time.sleep(0.1)
-
-
-def fallow_order():
-    while True:
-        fallow_acc.fallow_obj()
-        # time.sleep(0.01)
-
-
-main_th = MyThread(refresh, args=())
-fallow_th = MyThread(fallow_order, args=())
-main_th.start()
-fallow_th.start()
-main_th.join()
-fallow_th.join()
+# main_acc = MainAccount('30295272')
+# fallow_acc = FallowAccount('30266262')
+#
+#
+# def refresh():
+#     while True:
+#         ret = main_acc.check_update()
+#         # if ret:
+#         #     print ('副账户判断一次')
+#         fallow_acc.check_and_update(ret)
+#         time.sleep(0.1)
+#
+#
+# def fallow_order():
+#     while True:
+#         fallow_acc.fallow_obj()
+#         # time.sleep(0.01)
+#
+#
+# main_th = MyThread(refresh, args=())
+# fallow_th = MyThread(fallow_order, args=())
+# main_th.start()
+# fallow_th.start()
+# main_th.join()
+# fallow_th.join()

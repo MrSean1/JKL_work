@@ -32,7 +32,7 @@ main_th = MyThread(refresh, args=())
 fallow_th = [MyThread(fallow_order, args=(f_account,)) for f_account in fallow_account_list]
 main_th.start()
 [f_th.start() for f_th in fallow_th]
+[f_th.join() for f_th in fallow_th]
 main_th.join()
-fallow_th.join()
 
 

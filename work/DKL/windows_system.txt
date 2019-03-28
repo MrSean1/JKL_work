@@ -7,14 +7,14 @@
 		mysql root
 		ViOwLI2NG4WSCXkAuFeK0U3vj89stY
 
-MT4
-		47.244.120.214(公)
-		172.31.205.166(私有)
-		administrator
-		9kwSRQpVW7MxiJoOa01UTgetBZH3vh
+【杂币】			
+47.91.211.229(弹性)
 
-		mysql root
-		ViOwLI2NG4WSCXkAuFeK0U3vj89stY
+			172.31.53.12(私有)
+
+			bxbxroot
+
+			F95f8AiRrBEu8nRoM4efi1gOFoxWnz
 
 localhost mysql
 		A temporary password is generated for root@localhost: uyIJsZk6qP<Z

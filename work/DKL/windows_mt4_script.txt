@@ -1,0 +1,28 @@
+1. 自动重启
+	sp 端口8081
+	mt4 端口8989
+		有一个ping的接口返回值为pong 此接口可以检测mt4服务有没有停掉
+		nj4x 服务 是一个第三方脚本， 里面涵盖了所有mt4的接口脚本
+
+		mt4脚本java代码所在位置	mt4\src\main\java\com\mt4\web\Mt4Controller.java
+		nj4x 架包所在位置
+		mt4 下面就是
+
+2. 重新布置到新环境中
+	1）java环境
+	2）拷贝文件mt4 和nj4x		外加sp服务workspace
+	3）修改数据库配置文件		mt4\src\main\resources\application.properties
+	5) 修改log日志文件路径	mt4-master\src\main\resources\log4j.properties
+	6) 启动服务命令			start javaw -jar 服务名称
+
+3. 接口的迭代开发
+	java的接口文件 都在controller文件中	mt4\src\main\java\com\mt4\web\Mt4Controller.java
+
+	就接口文档：
+	http://www.myeatrade.com/zh/412/#OrderClose
+	
+	https://docs.mql4.com/trading
+	
+	https://www.mql5.com/zh/forum/217003
+	# nj4x 跟单系统接口说明
+	http://www.nj4x.com/media/copy_trading_api_ref_v3/index.html
