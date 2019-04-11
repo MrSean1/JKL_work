@@ -29,7 +29,12 @@ import pandas as pd
 # close_out_order = list()  # 平仓订单信息
 
 
-Email = Email(em_user=em_user, pwd=pwd, address=address, smtp_server=smtp_server)
+mt4_Email = Email(em_user=em_user, pwd=pwd, address=address, smtp_server=smtp_server)
+
+
+def mt4_send_email(msg, title):
+    th = MyThread(mt4_Email.send_email, args=(msg, title))
+    th.start()
 
 
 class MainAccount(MT4Account):
@@ -115,9 +120,12 @@ class FallowAccount(MT4Account):
             if count % 100 == 0:
                 self.logger.error(
                     '撤单失败超过100次， account:{}, order_id:{}, volume:{}'.format(self.account, order_id, volume))
-                Email.send_email(
-                    message='撤单失败超过100次，account:{}, order_id:{}, volume:{}'.format(self.account, order_id, volume),
-                    title='mt4 撤单失败')
+                # Email.send_email(
+                #     message='撤单失败超过100次，account:{}, order_id:{}, volume:{}'.format(self.account, order_id, volume),
+                #     title='mt4 撤单失败')
+                msg = '撤单失败超过100次，account:{}, order_id:{}, volume:{}'.format(self.account, order_id, volume)
+                title = 'mt4 撤单失败'
+                mt4_send_email(msg, title)
         return [order_id, True]
 
     # def fallow_delete_all_order(self):
@@ -208,6 +216,7 @@ class FallowAccount(MT4Account):
                 self.count_signal = True
                 self.old_pos = m_account_order_info
         except Exception as e:
+            self.count_signal = True
             self.logger.error(e)
 
     def fallow_obj(self):
@@ -221,14 +230,17 @@ class FallowAccount(MT4Account):
                     for f_order_del_info in self.m_acc_del_order_info:
                         f_order_id = f_order_del_info[0]
                         for m_order_id in self.m_correspond_f_order_id:
-                            if f_order_id in m_order_id.keys():
+                            if f_order_id in list(m_order_id.keys()):
                                 delete_order_info.append([m_order_id[f_order_id], f_order_del_info[1]['volume']])
                     if delete_order_info:
-                        for order_info in delete_order_info:
+                        while delete_order_info:
+                            order_info = delete_order_info.pop(0)
+                        # for order_info in delete_order_info:
                             ret = self.fallow_delete_order(order_id=order_info[0], volume=order_info[1])
                             msg = "账户：{}， 平仓操作结果：{}， ".format(self.account, ret)
                             title = "MT4 跟单软件 平仓"
-                            Email.send_email(message=msg, title=title)
+                            # Email.send_email(message=msg, title=title)
+                            mt4_send_email(msg, title)
                             if ret[1] is not True:
                                 """
                                     报警没有平掉此订单 
@@ -237,7 +249,8 @@ class FallowAccount(MT4Account):
                                     '副账户订单未平掉，账户：{}， 订单号：{} error_msg: {}'.format(self.account, order_info[0], ret))
                                 msg = '副账户订单未平掉，账户：{}， 订单号：{} error_msg: {}'.format(self.account, order_info[0], ret)
                                 title = 'MT4 跟单系统，副账户平仓失败'
-                                Email.send_email(message=msg, title=title)
+                                # Email.send_email(message=msg, title=title)
+                                mt4_send_email(msg, title)
                             else:
                                 # 删除掉订单对应表中记录的订单
                                 print("平仓订单：{}平仓前后：{}".format(ret, str(self.m_correspond_f_order_id)))
@@ -255,6 +268,7 @@ class FallowAccount(MT4Account):
                                           mode='a+')
                                 self.logger.info(
                                     '副账户订单被平掉，f_account:{}, order_id:{}, msg:{}'.format(self.account, order_info[0],
+
                                                                                         ret))
                     else:
                         f_order_info = self.get_f_account_orderinfo()
@@ -266,11 +280,15 @@ class FallowAccount(MT4Account):
                     self.m_acc_change_signal = False
                 elif self.m_acc_add_order_info:
                     self.logger.info('副账户开始做下单操作')
-                    for order_info in self.m_acc_add_order_info:
+                    while self.m_acc_add_order_info:
+                        order_info = self.m_acc_add_order_info.pop(0)
                         f_order_id = self.fallow_add_order(order_info[1])
-                        msg = '账户：{}， 跟单情况：{},'.format(self.account, f_order_id)
+                    # for order_info in self.m_acc_add_order_info:
+                    #     f_order_id = self.fallow_add_order(order_info[1])
+                        msg = '账户：{}， 跟单账户所下订单：{},'.format(self.account, f_order_id)
                         title = "MT4 跟单系统跟单情况"
-                        Email.send_email(message=msg, title=title)
+                        # Email.send_email(message=msg, title=title)
+                        mt4_send_email(msg, title)
                         if type(f_order_id) is int:
                             print('下单ID:' + str(f_order_id))
                             self.m_correspond_f_order_id.append({order_info[0]: f_order_id})
@@ -287,16 +305,19 @@ class FallowAccount(MT4Account):
                             self.logger.error('副账户跟单失败')
                             msg = "副账户跟单失败，账户：{}， 订单信息：{}， error_msg:{}".format(self.account, order_info, f_order_id)
                             title = "MT4 跟单系统，副账户跟单失败"
-                            Email.send_email(message=msg, title=title)
-                    self.m_acc_add_order_info = list()
+                            # Email.send_email(message=msg, title=title)
+                            mt4_send_email(msg, title)
+                    # self.m_acc_add_order_info = list()
                     self.m_acc_change_signal = False
                 else:
                     self.m_acc_change_signal = False
                     self.logger.critical('程序出错 信号发出 却没有可以下单和撤单的信息')
-                    message = '程序出错 信号发出 却没有可以下单和撤单的信息，m_acc_change_signal={}，' \
-                              'm_acc_add_order_info={}， m_acc_del_order_info={}'.format(
+                    msg = '程序出错 信号发出 却没有可以下单和撤单的信息，m_acc_change_signal={}，' \
+                          'm_acc_add_order_info={}， m_acc_del_order_info={}'.format(
                         self.m_acc_change_signal, self.m_acc_add_order_info, self.m_acc_del_order_info)
-                    Email.send_email(message=message, title="mt4, 跟单软件程序出错")
+                    title = "mt4, 跟单软件程序出错"
+                    # Email.send_email(message=msg, title="mt4, 跟单软件程序出错")
+                    mt4_send_email(msg, title)
             else:
                 pass
                 # if self.logger_count % 1000 == 0:
@@ -305,4 +326,7 @@ class FallowAccount(MT4Account):
                 # else:
                 #     self.logger_count += 1
         except Exception as e:
+            self.m_acc_add_order_info = list()
+            self.m_acc_del_order_info = list()
+            self.m_acc_change_signal = False
             self.logger.error(e)

@@ -30,15 +30,31 @@ log.setLevel(logging.INFO)
 
 
 def refresh():
+    count = 1
     while True:
         ret = main_account.check_update()
-        print('主账户返回的结果' + str(ret))
-        # if ret:
-        #     print ('副账户判断一次')
-        f_th = [MyThread(f_account.check_and_update, args=(ret,)) for f_account in fallow_account_list]
-        [th.start() for th in f_th]
-        [th.join() for th in f_th]
-        # fallow_acc.check_and_update(ret)
+        if count == 1:
+            old_pos = ret
+            signal = True
+            count += 1
+        else:
+            if ret == old_pos:
+                logging.info('没有变化')
+                signal = False
+                count += 1
+            else:
+                logging.info("主账户订单信息发生变化")
+                old_pos = ret
+                signal = True
+                count = 2
+        # print('主账户返回的结果' + str(ret))
+        if signal:
+            # if ret:
+            #     print ('副账户判断一次')
+            f_th = [MyThread(f_account.check_and_update, args=(ret,)) for f_account in fallow_account_list]
+            [th.start() for th in f_th]
+            [th.join() for th in f_th]
+            # fallow_acc.check_and_update(ret)
         time.sleep(0.1)
 
 
