@@ -1,8 +1,8 @@
-﻿sp
+sp
 		47.75.194.25(弹性)
 		192.168.0.20(私有)
 		administrator
-		9kwSRQpVW7MxiJoOa01UTgetBZH3vh
+		Jinkailimt41
 
 		mysql root
 		ViOwLI2NG4WSCXkAuFeK0U3vj89stY
@@ -15,6 +15,37 @@
 			bxbxroot
 
 			F95f8AiRrBEu8nRoM4efi1gOFoxWnz
+
+sp
+		47.75.194.25(弹性)
+		192.168.0.20(私有)
+		administrator
+		Jinkailimt41
+
+		mysql root
+		ViOwLI2NG4WSCXkAuFeK0U3vj89stY
+
+
+mt4_server_2
+		47.75.195.6
+		Administrator
+		Jinkailimt42
+
+mt4_server_3
+		47.244.37.23
+		Administrator
+		Jinkailimt43
+
+
+mt4 添加新用户：
+	URL = localhost:8989/addAccount
+	dic = {
+    "account": 65653090,
+    "password": "dgf467",
+    "broker": "PlotioFX-Live"
+	}
+
+
 
 localhost mysql
 		A temporary password is generated for root@localhost: uyIJsZk6qP<Z

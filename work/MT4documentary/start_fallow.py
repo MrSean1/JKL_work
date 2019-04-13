@@ -7,9 +7,13 @@ from mt4_config import *
 # from MT4documentary.MT4Account import MainAccount
 from MT4documentary import MainAccount
 from MT4documentary import FallowAccount
+from mt4_config import *
 
 main_account = MainAccount(all_account['main_account'])
 fallow_account_list = [FallowAccount(f_acc) for f_acc in all_account['fallow_account']]
+
+# for foll_account in fallow_account_list:
+#     pos[foll_account.account] = foll_account.balance/main_account.balance
 
 
 def setup_logger():
@@ -32,35 +36,42 @@ log.setLevel(logging.INFO)
 def refresh():
     count = 1
     while True:
-        ret = main_account.check_update()
-        if count == 1:
-            old_pos = ret
-            signal = True
-            count += 1
-        else:
-            if ret == old_pos:
-                logging.info('没有变化')
-                signal = False
-                count += 1
-            else:
-                logging.info("主账户订单信息发生变化")
-                old_pos = ret
-                signal = True
-                count = 2
-        # print('主账户返回的结果' + str(ret))
-        if signal:
-            # if ret:
-            #     print ('副账户判断一次')
-            f_th = [MyThread(f_account.check_and_update, args=(ret,)) for f_account in fallow_account_list]
-            [th.start() for th in f_th]
-            [th.join() for th in f_th]
-            # fallow_acc.check_and_update(ret)
-        time.sleep(0.1)
+        count = 1
+        while True:
+            ret = main_account.check_update()
+            if ret is not False:
+                if count == 1:
+                    old_pos = ret
+                    signal = True
+                    count += 1
+                else:
+                    if ret == old_pos:
+                        # logging.info('没有变化')
+                        signal = False
+                        count += 1
+                    else:
+                        logging.info("主账户订单信息发生变化")
+                        old_pos = ret
+                        signal = True
+                        count = 2
+                # print('主账户返回的结果' + str(ret))
+                if signal:
+                    # if ret:
+                    #     print ('副账户判断一次')
+                    f_th = [MyThread(f_account.check_and_update, args=(ret,)) for f_account in fallow_account_list]
+                    [th.start() for th in f_th]
+                    [th.join() for th in f_th]
+                    # fallow_acc.check_and_update(ret)
+                time.sleep(0.1)
+            elif ret is False:
+                break
+        logging.error('主账户停掉了， 赶紧检查主账户接口问题')
 
 
 def fallow_order(f_account):
     while True:
         f_account.fallow_obj()
+        f_account.judge_close()
         # fallow_acc.fallow_obj()
         # time.sleep(0.01)
 

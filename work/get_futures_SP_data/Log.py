@@ -34,3 +34,20 @@ class Logger(object):
         th.suffix = "%Y-%m-%d.log"
         # self.logger.addHandler(sh)  # 把对象加到logger里
         self.logger.addHandler(th)
+
+
+
+def operation(*args, **kwargs):
+    a = 0
+    print(len(args))
+    for i in range(len(args)):
+        if '0x' in args[i]:
+            a += int(args[i], 16)
+        # _num = int(str(args[i]))
+        # a += _num
+        elif args[i][0] == 0:
+            # 八进制
+            a += int(args[i], 8)
+        else:
+            a += int(args[i])
+    return a
