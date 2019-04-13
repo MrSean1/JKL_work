@@ -85,7 +85,7 @@ acc_13 = {
 
 
 
-# mt4_url = 'http://47.52.254.64:8989/addAccount'
+# mt4_url = 'http://47.75.194.25:8989/addAccount'
 # mt4_url = 'http://47.75.195.6:8989/addAccount'
 mt4_url = 'http://47.244.37.23:8989/addAccount'
 

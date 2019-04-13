@@ -1,6 +1,10 @@
 # *_*coding:utf-8 *_*
 import logging
+import os
 import time
+
+from send_email.send_email import Email
+
 from Mythread import MyThread
 from mt4_config import *
 # from MT4documentary.MT4Account import MainAccount
@@ -14,6 +18,8 @@ fallow_account_list = [FallowAccount(f_acc) for f_acc in all_account['fallow_acc
 
 # for foll_account in fallow_account_list:
 #     pos[foll_account.account] = foll_account.balance/main_account.balance
+# pwd = os.getcwd() + os.sep + 'log' + os.sep
+# filename = pwd + "mt4_logs.log"
 
 
 def setup_logger():
@@ -36,36 +42,33 @@ log.setLevel(logging.INFO)
 def refresh():
     count = 1
     while True:
-        count = 1
-        while True:
-            ret = main_account.check_update()
-            if ret is not False:
-                if count == 1:
-                    old_pos = ret
-                    signal = True
+        ret = main_account.check_update()
+        if ret is not False:
+            if count == 1:
+                old_pos = ret
+                signal = True
+                count += 1
+            else:
+                if ret == old_pos:
+                    # logging.info('没有变化')
+                    signal = False
                     count += 1
                 else:
-                    if ret == old_pos:
-                        # logging.info('没有变化')
-                        signal = False
-                        count += 1
-                    else:
-                        logging.info("主账户订单信息发生变化")
-                        old_pos = ret
-                        signal = True
-                        count = 2
-                # print('主账户返回的结果' + str(ret))
-                if signal:
-                    # if ret:
-                    #     print ('副账户判断一次')
-                    f_th = [MyThread(f_account.check_and_update, args=(ret,)) for f_account in fallow_account_list]
-                    [th.start() for th in f_th]
-                    [th.join() for th in f_th]
-                    # fallow_acc.check_and_update(ret)
-                time.sleep(0.1)
-            elif ret is False:
-                break
-        logging.error('主账户停掉了， 赶紧检查主账户接口问题')
+                    logging.info("主账户订单信息发生变化")
+                    old_pos = ret
+                    signal = True
+                    count = 2
+            if signal:
+                f_th = [MyThread(f_account.check_and_update, args=(ret,)) for f_account in fallow_account_list]
+                [th.start() for th in f_th]
+                [th.join() for th in f_th]
+            time.sleep(0.5)
+        elif ret is False:
+            break
+    msg = "主账户停掉了， 快检查程序"
+    title = "MT4 跟单软件，主账户停掉了"
+    Email.send_email(msg, title)
+    logging.error('主账户停掉了， 赶紧检查主账户接口问题')
 
 
 def fallow_order(f_account):

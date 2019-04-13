@@ -44,7 +44,6 @@ class MainAccount(MT4Account):
 
     def check_update(self):
         order_list = self.get_trade_order()
-        print(order_list)
         ret = dict()
         if order_list is not False:
             if order_list:
@@ -332,7 +331,7 @@ class FallowAccount(MT4Account):
                     mt4_send_email(msg, title)
             else:
                 t3 = datetime.datetime.now()
-                if (t3 - self.t_start).total_seconds() % 60 < 0.01:
+                if (t3 - self.t_start).total_seconds() % 60 < 0.02:
                     self.logger.info(
                         '没有收到主账户订单变化信号' + str(t3) + " " + str(self.t_start) + " " + str((t3 - self.t_start).seconds))
         except Exception as e:
@@ -418,7 +417,7 @@ class FallowAccount(MT4Account):
                     self.logger.info('收到副账户已下单信号但是没有查到副账户成交单信息')
             else:
                 t2 = datetime.datetime.now()
-                if (t2 - self.t_start).total_seconds() % 60 < 0.01:
+                if (t2 - self.t_start).total_seconds() % 60 < 0.02:
                     self.logger.info('副账户现在没有开始跟单, 时间差是' + str(t2) + " " + str(self.t_start) + " " + str((t2 - self.t_start).seconds))
         except Exception as e:
             self.judge_close_signal = False  # 这一步出错就将更空单信号修改为False 不进行判断平仓
