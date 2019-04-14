@@ -126,13 +126,9 @@ class FallowAccount(MT4Account):
             else:
                 count += 1
             if count % 100 == 0:
-                self.logger.error(
-                    '撤单失败超过100次， account:{}, order_id:{}, volume:{}'.format(self.account, order_id, volume))
-                # Email.send_email(
-                #     message='撤单失败超过100次，account:{}, order_id:{}, volume:{}'.format(self.account, order_id, volume),
-                #     title='mt4 撤单失败')
-                msg = '撤单失败超过100次，account:{}, order_id:{}, volume:{}'.format(self.account, order_id, volume)
+                msg = '撤单失败超过100次，account:{}, order_id:{}, volume:{}, 接口返回值：{}'.format(self.account, order_id, volume, ret)
                 title = 'mt4 撤单失败'
+                self.logger.error(msg)
                 mt4_send_email(msg, title)
         return [order_id, True]
 
@@ -172,7 +168,7 @@ class FallowAccount(MT4Account):
                         self.logger_count = 1
                     else:
                         self.logger_count += 1
-                    # pass
+                        # pass
                 else:
                     # 判断是增加订单还是减少订单
                     unusual_order_id = list(set(list(self.old_pos.keys()) + list(m_account_order_info.keys())))
@@ -283,7 +279,7 @@ class FallowAccount(MT4Account):
                     else:
                         f_order_info = self.get_f_account_orderinfo()
                         self.logger.warning(
-                            '副账户没有可以跟随主账户撤销的订单， f_order_info:{}, m_delete_order_info：{}, \
+                            '副账户没有可以跟随主账户撤销的订单， 副账户订单信息：f_order_info:{}, 主账户删除订单信息：m_delete_order_info：{}, \
                             对应订单记录表m_correspond_f_order_id：{}'.format(f_order_info, self.m_acc_del_order_info,
                                                                       self.m_correspond_f_order_id))
                     self.m_acc_del_order_info = list()
@@ -323,8 +319,8 @@ class FallowAccount(MT4Account):
                 else:
                     self.m_acc_change_signal = False
                     self.logger.critical('程序出错 信号发出 却没有可以下单和撤单的信息')
-                    msg = '程序出错 信号发出 却没有可以下单和撤单的信息，m_acc_change_signal={}，' \
-                          'm_acc_add_order_info={}， m_acc_del_order_info={}'.format(
+                    msg = '程序出错 信号发出 却没有可以下单和撤单的信息，主账户信号：m_acc_change_signal={}， \
+                          主账户下单信息：m_acc_add_order_info={}， 主账户平常信息表：m_acc_del_order_info={}'.format(
                         self.m_acc_change_signal, self.m_acc_add_order_info, self.m_acc_del_order_info)
                     title = "mt4, 跟单软件程序出错"
                     # Email.send_email(message=msg, title="mt4, 跟单软件程序出错")
@@ -343,10 +339,11 @@ class FallowAccount(MT4Account):
             mt4_send_email(msg=msg, title=title)
             self.logger.error(e)
 
+    # 风控
     def judge_close(self):
-        try:
-            if self.judge_close_signal:
-                trader_order_info = self.get_trade_order()
+        if self.judge_close_signal:
+            trader_order_info = self.get_trade_order()
+            if trader_order_info is not False:
                 if trader_order_info and self.m_correspond_f_order_id:
                     f_order_id = list()
                     for m_f_order_id_dict in self.m_correspond_f_order_id:
@@ -414,14 +411,26 @@ class FallowAccount(MT4Account):
                             self.logger.info(
                                 '账户：{}， 订单号：{}， 此订单不在跟单列表中不做强制平仓处理'.format(self.account, order_info['ticket']))
                 else:
-                    self.logger.info('收到副账户已下单信号但是没有查到副账户成交单信息')
+                    msg = '收到副账户已下单信号但是没有查到副账户成交单信息, 副账户查询返回值：{}，主副账户关联订单号{}'.format(trader_order_info,
+                                                                                     self.m_correspond_f_order_id)
+                    title = 'MT4 跟单 风控问题'
+                    mt4_send_email(msg=msg, title=title)
+                    self.logger.info(msg)
             else:
-                t2 = datetime.datetime.now()
-                if (t2 - self.t_start).total_seconds() % 60 < 0.02:
-                    self.logger.info('副账户现在没有开始跟单, 时间差是' + str(t2) + " " + str(self.t_start) + " " + str((t2 - self.t_start).seconds))
-        except Exception as e:
-            self.judge_close_signal = False  # 这一步出错就将更空单信号修改为False 不进行判断平仓
-            msg = '风控方法出现问题，赶紧进行修改，错误信息是：%s' % e
-            title = 'MT4 风控方法出现问题'
-            mt4_send_email(msg=msg, title=title)
-            self.logger.error('风控方法出现错误，赶紧修改，错误信息是：%e' % e)
+                # 接口爆掉了
+                msg = '副账户，查询成交订单接口被打爆，将停止该账户：{}订单的风控 接口返回信息是：{}'.format(self.account, trader_order_info)
+                title = "MT4 跟单 副账户接口被刷爆"
+                mt4_send_email(msg=msg, title=title)
+                self.logger.error(msg)
+                self.judge_close_signal = False
+        else:
+            t2 = datetime.datetime.now()
+            if (t2 - self.t_start).total_seconds() % 60 < 0.02:
+                self.logger.info('副账户现在没有开始跟单, 时间差是' + str(t2) + " " + str(self.t_start) + " " + str(
+                    (t2 - self.t_start).seconds))
+                # except Exception as e:
+                #     self.judge_close_signal = False  # 这一步出错就将更空单信号修改为False 不进行判断平仓
+                #     msg = '风控方法出现问题，赶紧进行修改，错误信息是：%s' % e
+                #     title = 'MT4 风控方法出现问题'
+                #     mt4_send_email(msg=msg, title=title)
+                #     self.logger.error('风控方法出现错误，赶紧修改，错误信息是：%e' % e)

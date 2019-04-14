@@ -67,7 +67,7 @@ def refresh():
             break
     msg = "主账户停掉了， 快检查程序"
     title = "MT4 跟单软件，主账户停掉了"
-    Email.send_email(msg, title)
+    Email(em_user, pwd, address, smtp_server).send_email(msg, title)
     logging.error('主账户停掉了， 赶紧检查主账户接口问题')
 
 
