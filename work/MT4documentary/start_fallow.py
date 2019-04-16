@@ -16,6 +16,7 @@ from mt4_config import *
 main_account = MainAccount(all_account['main_account'])
 fallow_account_list = [FallowAccount(f_acc) for f_acc in all_account['fallow_account']]
 
+
 # for foll_account in fallow_account_list:
 #     pos[foll_account.account] = foll_account.balance/main_account.balance
 # pwd = os.getcwd() + os.sep + 'log' + os.sep
@@ -24,19 +25,28 @@ fallow_account_list = [FallowAccount(f_acc) for f_acc in all_account['fallow_acc
 
 def setup_logger():
     # Prints logger info to terminal
+    logging.basicConfig(
+        level=logging.INFO,
+        filename="./log/mt4_logs.log",
+        filemode='a',
+        # encoding='utf-8',
+    )
+    # logging.FileHandler(filename="./log/mt4_logs.log", encoding='utf-8')
     logger = logging.getLogger()
-    logger.setLevel(logging.INFO)
+    # logger.setLevel(logging.INFO)
     ch = logging.StreamHandler()
     # create formatter
-    formatter = logging.Formatter("%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s")
+    formatter = logging.Formatter("%(asctime)s - %(name)s[line:%(lineno)d] - %(levelname)s: %(message)s")
     # add formatter to ch
     ch.setFormatter(formatter)
+    sh = logging.StreamHandler()  # 往屏幕上输出
+    # 屏幕输出格式
+    sh.setFormatter("%(asctime)s - %(name)s[line:%(lineno)d] - %(levelname)s: %(message)s")
     logger.addHandler(ch)
     return logger
 
 
 log = setup_logger()
-log.setLevel(logging.INFO)
 
 
 def refresh():
@@ -74,14 +84,22 @@ def refresh():
 def fallow_order(f_account):
     while True:
         f_account.fallow_obj()
-        f_account.judge_close()
         # fallow_acc.fallow_obj()
         # time.sleep(0.01)
 
 
+# def judge_close(f_account):
+#     while True:
+#         f_account.judge_close()
+#         time.sleep(1)
+
+
 main_th = MyThread(refresh, args=())
 fallow_th = [MyThread(fallow_order, args=(f_account,)) for f_account in fallow_account_list]
+# judge_close_th = [MyThread(judge_close, args=(f_account,)) for f_account in fallow_account_list]
 main_th.start()
 [f_th.start() for f_th in fallow_th]
+# [f_th.start() for f_th in judge_close_th]
 [f_th.join() for f_th in fallow_th]
+# [f_th.join() for f_th in judge_close_th]
 main_th.join()

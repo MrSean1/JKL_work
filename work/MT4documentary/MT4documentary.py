@@ -33,14 +33,15 @@ mt4_Email = Email(em_user=em_user, pwd=pwd, address=address, smtp_server=smtp_se
 
 
 def mt4_send_email(msg, title):
-    th = MyThread(mt4_Email.send_email, args=(msg, title))
-    th.start()
+    # th = MyThread(mt4_Email.send_email, args=(msg, title))
+    # th.start()
+    pass
 
 
 class MainAccount(MT4Account):
     def __init__(self, account):
         MT4Account.__init__(self, account)
-        self.logger = logging.getLogger(__name__)
+        self.logger = logging.getLogger('MainAccount' + str(account))
 
     def check_update(self):
         order_list = self.get_trade_order()
@@ -60,12 +61,12 @@ class MainAccount(MT4Account):
                         # 警告订单出问题了  附带账户主副信息
                         pass
                     ret[order_id] = {'volume': volume, 'symbol': symbol, 'order_type': order_type}
-                    self.logger.info('主账户订单信息：' + str(ret))
+                    # self.logger.info('主账户: {} 订单信息：{}'.format(self.account, ret))
                 return ret
             else:
                 return {}
         else:
-            msg = '主账户被打崩了， 赶紧手动操作，减少损失, 返回值是%s' % order_list
+            msg = '主账户: {}被打崩了， 赶紧手动操作，减少损失, 返回值是{}'.format(self.account, order_list)
             title = 'MT4 主账户被打崩了'
             mt4_send_email(msg=msg, title=title)
             return False
@@ -76,19 +77,17 @@ class FallowAccount(MT4Account):
         MT4Account.__init__(self, account)
         self.old_pos = dict()
         self.t_start = datetime.datetime.now()
-        self.count_signal = False  # 此信号可以判断第几次进入交易  第一次进入交易时将主账户的订单情况存储在self.ole_pos中， 用于判断仓位的变化
         # 第一次进入时为False 之后转为True
-        self.m_acc_change_signal = False  # 主账户仓位改变信号
+        self.count_signal = False  # 此信号可以判断第几次进入交易  第一次进入交易时将主账户的订单情况存储在self.ole_pos中， 用于判断仓位的变化
         self.judge_close_signal = False
         self.m_acc_add_order_info = list()  # 加仓信息
         self.m_acc_del_order_info = list()  # 平仓信息
         self.m_correspond_f_order_id = list()  # 主副账户订单对应信息
-        self.logger = logging.getLogger(__name__)
+        self.logger = logging.getLogger("FallowAccount" + str(account))
         self.m_pos = 0
         self.logger_count = 0
 
-    def fallow_add_order(self, ret, slippage=5, stop_loss=0, take_profit=0, magic=0,
-                         last_data=None):
+    def fallow_add_order(self, ret, slippage=5, stop_loss=0, take_profit=0, magic=0, last_data=None):
         """
         副账户下单
         :param ret: 主账户订单信息
@@ -99,7 +98,7 @@ class FallowAccount(MT4Account):
         :param last_data: 截止日期
         :return:
         """
-        volume = round(pos[self.account] * ret['volume'])
+        volume = max(1, int(pos[self.account] * ret['volume']))
         symbol = ret['symbol']
         order_type = ret['order_type']
         if order_type == 'buy':
@@ -107,7 +106,8 @@ class FallowAccount(MT4Account):
         elif order_type == 'sell':
             order_type = 'OP_SELL'
         order_id = self.add_order(symbol=symbol, volume=volume, operation=order_type)
-        self.logger.info('下了一个订单，symblo={}, volume={}, order_type={}'.format(symbol, volume, order_type))
+        self.logger.info(
+            '账户： {}下了一个订单，symblo={}, volume={}, order_type={}'.format(self.account, symbol, volume, order_type))
         return order_id
 
     # 需要改
@@ -118,7 +118,7 @@ class FallowAccount(MT4Account):
         """
         count = 0
         while True:
-            volume = round(pos[self.account] * volume)
+            volume = max(1, int(pos[self.account] * volume))
             ret = self.close_position(order_id, volume)
             print('账号：{}平仓订单号：{}， 结果：{}'.format(self.account, order_id, ret))
             if ret:
@@ -126,7 +126,8 @@ class FallowAccount(MT4Account):
             else:
                 count += 1
             if count % 100 == 0:
-                msg = '撤单失败超过100次，account:{}, order_id:{}, volume:{}, 接口返回值：{}'.format(self.account, order_id, volume, ret)
+                msg = '撤单失败超过100次，account:{}, order_id:{}, volume:{}, 接口返回值：{}'.format(self.account, order_id, volume,
+                                                                                       ret)
                 title = 'mt4 撤单失败'
                 self.logger.error(msg)
                 mt4_send_email(msg, title)
@@ -176,13 +177,12 @@ class FallowAccount(MT4Account):
                         if order_id not in self.old_pos.keys() and order_id in m_account_order_info.keys():
                             # 新增的订单
                             self.logger.info("主账户做了下单操作")
-                            self.m_acc_change_signal = True
                             self.m_acc_add_order_info.append((order_id, m_account_order_info[order_id]))
                         elif order_id in self.old_pos.keys() and order_id not in m_account_order_info.keys():
                             # 订单被撤掉
                             self.logger.info("主账户做了平仓操作")
-                            self.m_acc_change_signal = True
                             self.m_acc_del_order_info.append((order_id, self.old_pos[order_id]))
+                            # print('账户： {}  需要删除的订单列表：{}'.format(self.account, self.m_acc_del_order_info))
                 self.old_pos = m_account_order_info
             else:
                 """
@@ -221,123 +221,122 @@ class FallowAccount(MT4Account):
                 self.old_pos = m_account_order_info
         except Exception as e:
             self.count_signal = True
-            msg = '副账户检查更新的方法出错，赶紧停掉程序，查看程序的问题，错误信息是：%s' % e
+            msg = '副账户：{}检查更新的方法出错，赶紧停掉程序，查看程序的问题，错误信息是：{}'.format(self.account, e)
             title = 'MT4 副账户检查更新的方法出错'
             mt4_send_email(msg=msg, title=title)
-            self.logger.error(e)
+            self.logger.error(msg)
 
     def fallow_obj(self):
         try:
-            if self.m_acc_change_signal:
-                # 需要做下单或者平仓操作
-                if self.m_acc_del_order_info:
-                    # 做平仓操作
-                    self.logger.info('副账户开始做平仓操作')
-                    delete_order_info = list()
-                    for f_order_del_info in self.m_acc_del_order_info:
-                        f_order_id = f_order_del_info[0]
-                        for m_order_id in self.m_correspond_f_order_id:
-                            if f_order_id in list(m_order_id.keys()):
-                                delete_order_info.append([m_order_id[f_order_id], f_order_del_info[1]['volume']])
-                    if delete_order_info:
-                        while delete_order_info:
-                            order_info = delete_order_info.pop(0)
-                            # for order_info in delete_order_info:
-                            ret = self.fallow_delete_order(order_id=order_info[0], volume=order_info[1])
-                            msg = "账户：{}， 平仓操作结果：{}， ".format(self.account, ret)
-                            title = "MT4 跟单软件 平仓"
-                            # Email.send_email(message=msg, title=title)
-                            mt4_send_email(msg, title)
-                            if ret[1] is not True:
-                                """
-                                    报警没有平掉此订单 
-                                """
-                                self.logger.error(
-                                    '副账户订单未平掉，账户：{}， 订单号：{} error_msg: {}'.format(self.account, order_info[0], ret))
-                                msg = '副账户订单未平掉，账户：{}， 订单号：{} error_msg: {}'.format(self.account, order_info[0], ret)
-                                title = 'MT4 跟单系统，副账户平仓失败'
-                                # Email.send_email(message=msg, title=title)
-                                mt4_send_email(msg, title)
-                            else:
-                                # 删除掉订单对应表中记录的订单
-                                print("平仓订单：{}平仓前后：{}".format(ret, str(self.m_correspond_f_order_id)))
-                                for correspond_order in self.m_correspond_f_order_id:
-                                    for order_m_id, order_f_id in correspond_order.items():
-                                        if order_f_id == order_info[0]:
-                                            self.m_correspond_f_order_id.remove(correspond_order)
-                                pwd = os.getcwd() + os.sep + 'orders_info'
-                                if os.path.exists(pwd) is False:
-                                    os.mkdir(pwd)
-                                df = pd.DataFrame(data=[[self.account, order_info[0], order_info[1], 'close_order',
-                                                         datetime.datetime.now()]])
-                                file_name = self.account + '.csv'
-                                df.to_csv(pwd + os.sep + file_name, header=False, index=False, encoding='utf-8',
-                                          mode='a+')
-                                self.logger.info(
-                                    '副账户订单被平掉，f_account:{}, order_id:{}, msg:{}'.format(self.account, order_info[0],
-                                                                                        ret))
-                    else:
-                        f_order_info = self.get_f_account_orderinfo()
-                        self.logger.warning(
-                            '副账户没有可以跟随主账户撤销的订单， 副账户订单信息：f_order_info:{}, 主账户删除订单信息：m_delete_order_info：{}, \
-                            对应订单记录表m_correspond_f_order_id：{}'.format(f_order_info, self.m_acc_del_order_info,
-                                                                      self.m_correspond_f_order_id))
-                    self.m_acc_del_order_info = list()
-                    self.m_acc_change_signal = False
-                elif self.m_acc_add_order_info:
-                    self.logger.info('副账户开始做下单操作')
-                    while self.m_acc_add_order_info:
-                        order_info = self.m_acc_add_order_info.pop(0)
-                        f_order_id = self.fallow_add_order(order_info[1])
-                        # for order_info in self.m_acc_add_order_info:
-                        #     f_order_id = self.fallow_add_order(order_info[1])
-                        msg = '账户：{}， 跟单账户所下订单：{},'.format(self.account, f_order_id)
-                        title = "MT4 跟单系统跟单情况"
-                        # Email.send_email(message=msg, title=title)
+            # 需要做下单或者平仓操作
+            if self.m_acc_del_order_info:
+                # 做平仓操作
+                self.logger.info('副账户: {}开始做平仓操作'.format(self.account))
+                delete_order_info = list()
+                for f_order_del_info in self.m_acc_del_order_info:
+                    f_order_id = f_order_del_info[0]
+                    for m_order_id in self.m_correspond_f_order_id:
+                        if f_order_id in list(m_order_id.keys()):
+                            delete_order_info.append([m_order_id[f_order_id], f_order_del_info[1]['volume']])
+                a = len(delete_order_info)
+                if delete_order_info:
+                    while delete_order_info:
+                        order_info = delete_order_info.pop(0)
+                        ret = self.fallow_delete_order(order_id=order_info[0], volume=order_info[1])
+                        msg = "账户：{}， 平仓操作结果：{}， ".format(self.account, ret)
+                        title = "MT4 跟单软件 平仓"
                         mt4_send_email(msg, title)
-                        if type(f_order_id) is int:
-                            print('下单ID:' + str(f_order_id))
-                            self.m_correspond_f_order_id.append({order_info[0]: f_order_id})
-                            print("下单后" + str(self.m_correspond_f_order_id))
+                        if ret[1] is not True:
+                            """
+                                报警没有平掉此订单 
+                            """
+                            self.logger.error(
+                                '副账户订单未平掉，账户：{}， 订单号：{} error_msg: {}'.format(self.account, order_info[0], ret))
+                            msg = '副账户订单未平掉，账户：{}， 订单号：{} error_msg: {}'.format(self.account, order_info[0], ret)
+                            title = 'MT4 跟单系统，副账户平仓失败'
+                            mt4_send_email(msg, title)
+                        else:
+                            # 删除掉订单对应表中记录的订单
+                            print("账户：{} 平仓订单：{}平仓前：{}".format(self.account, ret, str(self.m_correspond_f_order_id)))
+                            for correspond_order in self.m_correspond_f_order_id:
+                                for order_m_id, order_f_id in correspond_order.items():
+                                    if order_f_id == order_info[0]:
+                                        self.m_correspond_f_order_id.remove(correspond_order)
+                            if self.m_correspond_f_order_id:
+                                pass
+                            else:
+                                self.judge_close_signal = False
                             pwd = os.getcwd() + os.sep + 'orders_info'
                             if os.path.exists(pwd) is False:
                                 os.mkdir(pwd)
-                            df = pd.DataFrame(data=[[self.account, f_order_id, order_info[1]['volume'], 'add_order',
+                            df = pd.DataFrame(data=[[self.account, order_info[0], order_info[1], 'close_order',
                                                      datetime.datetime.now()]])
                             file_name = self.account + '.csv'
-                            df.to_csv(pwd + os.sep + file_name, header=False, index=False, encoding='utf-8', mode='a+')
-                            self.logger.info('副账户跟单成功, 订单编号：%s' % f_order_id)
-                            self.judge_close_signal = True
-                        else:
-                            self.logger.error('副账户跟单失败')
-                            msg = "副账户跟单失败，账户：{}， 订单信息：{}， error_msg:{}".format(self.account, order_info, f_order_id)
-                            title = "MT4 跟单系统，副账户跟单失败"
-                            # Email.send_email(message=msg, title=title)
-                            mt4_send_email(msg, title)
-                    # self.m_acc_add_order_info = list()
-                    self.m_acc_change_signal = False
+                            df.to_csv(pwd + os.sep + file_name, header=False, index=False, encoding='utf-8',
+                                      mode='a+')
+                            self.logger.info(
+                                '副账户订单被平掉，f_account:{}, order_id:{}, msg:{}'.format(self.account, order_info[0],
+                                                                                    ret))
                 else:
-                    self.m_acc_change_signal = False
-                    self.logger.critical('程序出错 信号发出 却没有可以下单和撤单的信息')
-                    msg = '程序出错 信号发出 却没有可以下单和撤单的信息，主账户信号：m_acc_change_signal={}， \
-                          主账户下单信息：m_acc_add_order_info={}， 主账户平常信息表：m_acc_del_order_info={}'.format(
-                        self.m_acc_change_signal, self.m_acc_add_order_info, self.m_acc_del_order_info)
-                    title = "mt4, 跟单软件程序出错"
-                    # Email.send_email(message=msg, title="mt4, 跟单软件程序出错")
+                    f_order_info = self.get_f_account_orderinfo()
+                    self.logger.warning(
+                        '副账户没有可以跟随主账户撤销的订单， 副账户订单信息：f_order_info:{}, 主账户删除订单信息：m_delete_order_info：{}, \
+                        对应订单记录表m_correspond_f_order_id：{}'.format(f_order_info, self.m_acc_del_order_info,
+                                                                  self.m_correspond_f_order_id))
+                for _ in range(a):
+                    self.m_acc_del_order_info.pop(0)
+            elif self.m_acc_add_order_info:
+                self.logger.info('副账户开始做下单操作')
+                while self.m_acc_add_order_info:
+                    order_info = self.m_acc_add_order_info.pop(0)
+                    f_order_id = self.fallow_add_order(order_info[1])
+                    msg = '账户：{}， 跟单账户所下订单：{},'.format(self.account, f_order_id)
+                    title = "MT4 跟单系统跟单情况"
                     mt4_send_email(msg, title)
+                    if type(f_order_id) is int:
+                        print('账户：{} 下单ID:{}'.format(self.account, f_order_id))
+                        self.m_correspond_f_order_id.append({order_info[0]: f_order_id})
+                        print("账户: {} 下单后{}".format(self.account, self.m_correspond_f_order_id))
+                        pwd = os.getcwd() + os.sep + 'orders_info'
+                        if os.path.exists(pwd) is False:
+                            os.mkdir(pwd)
+                        df = pd.DataFrame(data=[[self.account, f_order_id, order_info[1]['volume'], 'add_order',
+                                                 datetime.datetime.now()]])
+                        file_name = self.account + '.csv'
+                        df.to_csv(pwd + os.sep + file_name, header=False, index=False, encoding='utf-8', mode='a+')
+                        self.logger.info('副账户: {} 跟单成功, 订单编号：{}'.format(self.account, f_order_id))
+                        self.judge_close_signal = True
+                    else:
+                        self.logger.error('副账户: {}跟单失败'.format(self.account))
+                        order_info[1]['volume'] = max(1, int(order_info[1]['volume'] * pos[self.account]))
+                        msg = "副账户跟单失败，账户：{}， 订单信息：{}， error_msg:{}".format(self.account, order_info, f_order_id)
+                        title = "MT4 跟单系统，副账户跟单失败"
+                        mt4_send_email(msg, title)
             else:
                 t3 = datetime.datetime.now()
                 if (t3 - self.t_start).total_seconds() % 60 < 0.02:
-                    self.logger.info(
-                        '没有收到主账户订单变化信号' + str(t3) + " " + str(self.t_start) + " " + str((t3 - self.t_start).seconds))
+                    self.logger.info('账号：{} ，没有收到 时间：{}'.format(self.account, t3))
+                # self.m_acc_change_signal = False
+                # self.logger.critical('账户：{} fallow_obj程序出错 信号发出 却没有可以下单和撤单的信息'.format(self.account))
+                # msg = '程序出错 信号发出 却没有可以下单和撤单的信息，主账户信号：m_acc_change_signal={}， \
+                #       主账户下单信息：m_acc_add_order_info={}， 主账户平常信息表：m_acc_del_order_info={}'.format(
+                #     self.m_acc_change_signal, self.m_acc_add_order_info, self.m_acc_del_order_info)
+                # title = "mt4, 跟单软件程序出错"
+                # # Email.send_email(message=msg, title="mt4, 跟单软件程序出错")
+                # mt4_send_email(msg, title)
+            # else:
+            #     # t3 = datetime.datetime.now()
+            #     # if (t3 - self.t_start).total_seconds() % 60 < 0.02:
+            #     #     self.logger.info('账号：{} 没有收到主账户订单变化信号，时间：{}'.format(self.account, t3))
+            #     pass
         except Exception as e:
             self.m_acc_add_order_info = list()
             self.m_acc_del_order_info = list()
-            self.m_acc_change_signal = False
-            msg = '跟单方法出错，赶紧停掉程序改为手动， 方法名：fallow_obj， 错误信息是%s' % e
+            # self.m_acc_change_signal = False
+            msg = '账户：{} 跟单方法出错，赶紧停掉程序改为手动， 方法名：fallow_obj， 错误信息是：{}'.format(self.account, e)
             title = "MT4 跟单方法出错"
             mt4_send_email(msg=msg, title=title)
-            self.logger.error(e)
+            self.logger.error(msg)
 
     # 风控
     def judge_close(self):
@@ -357,8 +356,8 @@ class FallowAccount(MT4Account):
                             #     order_type = 'sell'
                             lost_limit = (order_info['closePrice'] - order_info['openPrice']) / order_info['openPrice']
                             if order_info['type']['val'] == 1 and lost_limit > 0.02:
-                                self.logger.info('开始平仓')
-                                # 买跌 涨幅超过1% 启动平仓机制
+                                self.logger.info('账户：{} 开始平仓'.format(self.account))
+                                # 买跌 涨幅超过2% 启动平仓机制
                                 lost_ret = self.fallow_delete_order(order_id=order_info['ticket'],
                                                                     volume=order_info['lots'])
                                 if lost_ret[1]:
@@ -381,7 +380,7 @@ class FallowAccount(MT4Account):
                                     self.judge_close_signal = False
                                     mt4_send_email(msg=msg, title=title)
                             elif order_info['type']['val'] == 0 and lost_limit < -0.02:
-                                # 买涨 跌幅超过1% 启动平仓
+                                # 买涨 跌幅超过2% 启动平仓
                                 lost_ret = self.fallow_delete_order(order_id=order_info['ticket'],
                                                                     volume=order_info['lots'])
                                 if lost_ret[1]:
@@ -406,12 +405,16 @@ class FallowAccount(MT4Account):
                                             self.m_correspond_f_order_id.remove(i)
                                 self.judge_close_signal = False
                             else:
-                                self.logger.info('没有达到强制平仓要求')
+                                t4 = datetime.datetime.now()
+                                if (t4 - self.t_start).total_seconds() % 60 < 0.02:
+                                    self.logger.info('账户：{}没有达到强制平仓要求, 订单信息：{}'.format(self.account, order_info))
                         else:
-                            self.logger.info(
-                                '账户：{}， 订单号：{}， 此订单不在跟单列表中不做强制平仓处理'.format(self.account, order_info['ticket']))
+                            t5 = datetime.datetime.now()
+                            if (t5 - self.t_start).total_seconds() % 60 < 0.02:
+                                self.logger.info(
+                                    '账户：{}， 订单号：{}， 此订单不在跟单列表中不做强制平仓处理'.format(self.account, order_info['ticket']))
                 else:
-                    msg = '收到副账户已下单信号但是没有查到副账户成交单信息, 副账户查询返回值：{}，主副账户关联订单号{}'.format(trader_order_info,
+                    msg = '收到主账户已下单信号但是没有查到副账户成交单信息, 副账户查询返回值：{}，主副账户关联订单号{}'.format(trader_order_info,
                                                                                      self.m_correspond_f_order_id)
                     title = 'MT4 跟单 风控问题'
                     mt4_send_email(msg=msg, title=title)
@@ -426,8 +429,7 @@ class FallowAccount(MT4Account):
         else:
             t2 = datetime.datetime.now()
             if (t2 - self.t_start).total_seconds() % 60 < 0.02:
-                self.logger.info('副账户现在没有开始跟单, 时间差是' + str(t2) + " " + str(self.t_start) + " " + str(
-                    (t2 - self.t_start).seconds))
+                self.logger.info('副账户：{}现在没有开始跟单, 时间：{}'.format(self.account, t2))
                 # except Exception as e:
                 #     self.judge_close_signal = False  # 这一步出错就将更空单信号修改为False 不进行判断平仓
                 #     msg = '风控方法出现问题，赶紧进行修改，错误信息是：%s' % e
