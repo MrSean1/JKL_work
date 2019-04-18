@@ -1,14 +1,11 @@
 # *_*coding:utf-8 *_*
+import datetime
 import logging
-import os
 import time
 
 from send_email.send_email import Email
 
 from Mythread import MyThread
-from mt4_config import *
-# from MT4documentary.MT4Account import MainAccount
-# from MT4documentary.MT4Account import MainAccount
 from MT4documentary import MainAccount
 from MT4documentary import FallowAccount
 from mt4_config import *
@@ -19,17 +16,15 @@ fallow_account_list = [FallowAccount(f_acc) for f_acc in all_account['fallow_acc
 
 # for foll_account in fallow_account_list:
 #     pos[foll_account.account] = foll_account.balance/main_account.balance
-# pwd = os.getcwd() + os.sep + 'log' + os.sep
-# filename = pwd + "mt4_logs.log"
 
 
 def setup_logger():
     # Prints logger info to terminal
     logging.basicConfig(
         level=logging.INFO,
-        filename="./log/mt4_logs.log",
+        filename="./log/mt4_{}.log".format(datetime.datetime.now().date()),
+        format='%(asctime)s - %(name)s[line:%(lineno)d] - %(levelname)s: %(message)s',
         filemode='a',
-        # encoding='utf-8',
     )
     # logging.FileHandler(filename="./log/mt4_logs.log", encoding='utf-8')
     logger = logging.getLogger()

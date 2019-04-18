@@ -2,6 +2,15 @@ import requests
 from mt4_account import MT4Account
 
 
+sp_account = p = {
+    "userId": "73883259",
+    "accNo": "73883259",
+    "host": "f1.xyzq.com.hk",
+    "appId": "XYZQ",
+    "licence": "8871B82FB6233160",
+    "password": "qq123456"
+}
+
 demo_acc = {
     "account": 9014325,
     "password": "3xsacls",
@@ -88,6 +97,8 @@ acc_13 = {
 # mt4_url = 'http://47.75.194.25:8989/addAccount'
 # mt4_url = 'http://47.75.195.6:8989/addAccount'
 mt4_url = 'http://47.244.37.23:8989/addAccount'
+sp_url = 'http://47.75.194.25:8081/addUser'
 
 response = requests.post(mt4_url, json=demo_acc)
 requests.post(mt4_url, json=demo_acc).json()
+requests.post(sp_url, json=sp_account).json()

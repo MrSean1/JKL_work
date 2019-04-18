@@ -8,7 +8,7 @@ import time
 # import pandas as pd
 import requests
 from config import *
-from send_email import Email
+# from send_email import Email
 
 # account = 'DEMO201812037'
 # a = Account('73883669')
