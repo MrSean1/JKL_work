@@ -1,25 +1,14 @@
 # *_*coding:utf-8 *_*
-all_account = {'main_account': "9014442",
-               'fallow_account': ["9014435", "9014492"],
+all_account = {'main_account': 9017161,
+               'fallow_account': ["9017159", "9017158"],
                }
-
-account_level = dict()
-
-# , "9013778", "9014123", '9014124', '9014125', '9014127'
-
-# pos = dict()
+#
+# account_level = dict()
+#
 pos = {
-    '9014435': 0.10019084106045713,
-    '9014492': 0.19745577969502645
-    # '9013777': 1.9208740318845979,
-    # '9013778': 1.2170707689032019,
-    # '9014123': 1.6634285258031032,
-    # '9014124': 166.4285258031032,
-    # '9014125': 33.26857051606206,
-    # '9014127': 166.3428525803103
+    '9017159': 10,
+    '9017158': 5
 }
-# for f_acc in all_account['fallow_account']:
-#     pos[f_acc] = account_level[f_acc]
 
 em_user = '295861809@qq.com'
 pwd = 'qxkrwbmoxosdbhfi'
@@ -41,3 +30,25 @@ smtp_server = 'smtp.qq.com'
 #               'TRADEALLOWED': 0.0, 'MINLOT': 1.0, 'LOTSTEP': 0.01, 'MAXLOT': 1000.0, 'SWAPTYPE': 0.0,
 #               'PROFITCALCMODE': 2.0, 'MARGINCALCMODE': 3.0, 'MARGININIT': 0.0, 'MARGINMAINTENANCE': 0.0,
 #               'MARGINHEDGED': 0.0, 'MARGINREQUIRED': 358.28, 'FREEZELEVEL': 10.0}}
+# symbol：SKYWORKS
+# c = {'msg': 'success', 'code': 1,
+#      'data': {'LOW': 89.715, 'HIGH': 91.785, 'TIME': '2019-04-18T11:59:59.000+0000', 'BID': 89.925, 'ASK': 90.025,
+#               'POINT': 0.001, 'DIGITS': 3.0, 'SPREAD': 100.0, 'STOPLEVEL': 20.0, 'LOTSIZE': 1.0, 'TICKVALUE': 0.001,
+#               'TICKSIZE': 1e-05, 'SWAPLONG': 0.0, 'SWAPSHORT': 0.0, 'STARTING': 0.0, 'EXPIRATION': 0.0,
+#               'TRADEALLOWED': 0.0, 'MINLOT': 1.0, 'LOTSTEP': 1.0, 'MAXLOT': 500.0, 'SWAPTYPE': 0.0,
+#               'PROFITCALCMODE': 2.0, 'MARGINCALCMODE': 3.0, 'MARGININIT': 0.0, 'MARGINMAINTENANCE': 0.0,
+#               'MARGINHEDGED': 0.0, 'MARGINREQUIRED': 1350.38, 'FREEZELEVEL': 10.0}}
+
+
+a = [[[[58845536, {'symbol': 'USDCHF', 'volume': 1, 'order_type': 'buy'}],
+       [58845537, {'symbol': 'USDCHF', 'volume': 2, 'order_type': 'buy'}],
+       [58845540, {'symbol': 'USDCHF', 'volume': 3, 'order_type': 'buy'}],
+       [58845542, {'symbol': 'USDCHF', 'volume': 1, 'order_type': 'buy'}],
+       [58845543, {'symbol': 'USDCHF', 'volume': 5, 'order_type': 'buy'}],
+       [58845544, {'symbol': 'USDCHF', 'volume': 3, 'order_type': 'buy'}]]]]
+b = [[58845536, {'symbol': 'USDCHF', 'volume': 1, 'order_type': 'buy'}],
+     [58845537, {'symbol': 'USDCHF', 'volume': 2, 'order_type': 'buy'}],
+     [58845540, {'symbol': 'USDCHF', 'volume': 3, 'order_type': 'buy'}],
+     [58845542, {'symbol': 'USDCHF', 'volume': 1, 'order_type': 'buy'}],
+     [58845543, {'symbol': 'USDCHF', 'volume': 5, 'order_type': 'buy'}],
+     [58845544, {'symbol': 'USDCHF', 'volume': 3, 'order_type': 'buy'}]]

@@ -1,7 +1,6 @@
 import requests
 from mt4_account import MT4Account
 
-
 sp_account = p = {
     "userId": "73883259",
     "accNo": "73883259",
@@ -21,8 +20,6 @@ demo_acc = {
     "password": "x3lzlup",
     "broker": "ADSS-Demo"
 }
-
-
 
 acc_1 = {
     "account": 222057151,
@@ -90,8 +87,16 @@ acc_13 = {
     "password": "jzm123456.",
     "broker": "ADSS-Live1"
 }
-
-
+acc_FX_13 = {
+    "account": 635443,
+    "password": "UTy3Hec3",
+    "broker": "FxPro.com-Real06"
+}
+acc_IFC_13 = {
+    "account": 59466,
+    "password": "zJ97LjT",
+    "broker": "IFCMarkets-Real"
+}
 
 
 # mt4_url = 'http://47.75.194.25:8989/addAccount'

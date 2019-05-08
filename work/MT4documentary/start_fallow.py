@@ -9,11 +9,18 @@ from Mythread import MyThread
 from MT4documentary import MainAccount
 from MT4documentary import FallowAccount
 from mt4_config import *
-
-main_account = MainAccount(all_account['main_account'])
-fallow_account_list = [FallowAccount(f_acc) for f_acc in all_account['fallow_account']]
+import pandas as pd
 
 
+acc_info = pd.read_csv('accInfo.csv')
+ate_acc_info = acc_info[acc_info['inactive'] != 1]
+main_account_info = ate_acc_info[ate_acc_info['account'] == all_account['main_account']]
+f_account_info = ate_acc_info[ate_acc_info['account'] != all_account['main_account']]
+
+main_account = MainAccount(str(main_account_info['account'].item()), str(main_account_info['ip'].item()))
+fallow_account_list = [FallowAccount(str(row['account']), str(row['ip'])) for index, row in f_account_info.iterrows()]
+
+# pos = dict()
 # for foll_account in fallow_account_list:
 #     pos[foll_account.account] = foll_account.balance/main_account.balance
 
