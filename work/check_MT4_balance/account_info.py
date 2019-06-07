@@ -1,13 +1,11 @@
 import os
 import datetime
 import logging
-import smtplib
-from email.mime.text import MIMEText
-
 import pandas as pd
 import json
 import xlwt
 from mt4_account import MT4Account
+import smtplib
 
 
 def setup_logger():
@@ -39,33 +37,6 @@ def setup_logger():
     return logger
 
 
-logger = setup_logger()
-
-
-class Email():
-    def __init__(self, em_user, pwd, address, smtp_server, end_number):
-        self.em_user = em_user
-        self.pwd = pwd
-        self.address = address
-        self.smtp_server = smtp_server
-        self.logger = logging.getLogger(end_number)
-
-    def send_email(self, message, title):
-        try:
-            message_em = MIMEText(message)
-            message_em['From'] = self.em_user
-            # message_em['To'] = self.address
-            message_em['Subject'] = title
-            server = smtplib.SMTP_SSL(self.smtp_server, 465)
-            server.set_debuglevel(1)
-            server.login(self.em_user, self.pwd)
-            server.sendmail(self.em_user, self.address, message_em.as_string())
-            server.quit()
-        except smtplib.SMTPException as e:
-            self.logger.error(e)
-            print("Falied,%s" % e)
-
-
 def get_balance_info():
     rmb_data = []
     usd_data = ["ADSS-Live1", "IFCMarkets-Real", "ThinkForexAU-Live", "Ava-Real5", "XTRINT-Live"]
@@ -74,8 +45,6 @@ def get_balance_info():
     sheet = f.add_sheet('sheet')
     time = datetime.datetime.now().date()
     csv_data = pd.read_csv('account.csv')
-    data = []
-    account = csv_data["account"]
     sheet.write(0, 0, label='平台')
     sheet.write(0, 1, label='账户')
     sheet.write(0, 2, label='人民币')
@@ -86,10 +55,14 @@ def get_balance_info():
         ipv4 = str(csv_data.iloc[i]["ip_ipv4"])
         broker = str(csv_data.iloc[i]["broker"])
         try:
-            mt4 = MT4Account(account, ipv4)
+            mt4_status = MT4Account(account, ipv4).get_account()
+            if mt4_status:
+                mt4 = MT4Account(account, ipv4)
+                balance = mt4.balance
+            else:
+                balance = 'False'
         except Exception as e:
             logger.error(e)
-        balance = mt4.balance
         sheet.write(i + 1, 0, broker)
         sheet.write(i + 1, 1, account)
         if broker in rmb_data:
@@ -102,4 +75,6 @@ def get_balance_info():
 
 
 if __name__ == '__main__':
+    logger = setup_logger()
     get_balance_info()
+

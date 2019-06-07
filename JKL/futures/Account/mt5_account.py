@@ -8,10 +8,9 @@ import requests
 # account = ["30266262", "30266263", "30275963", "30275964", "30275965"]
 
 
-class MT4Account:
+class MT5Account:
     def __init__(self, account, ip):
         self.logger = logging.getLogger("MT4Account " + str(account))
-        self.req = requests.session()
         self.order_id_list = list()
         self.account = account
         self.balance = 0  # 总余额
@@ -23,7 +22,7 @@ class MT4Account:
         self.pos_status = 0  # 有仓位/无仓位
         # self.__rest_root = 'http://47.75.195.6:8989'
         # self.__rest_root = 'http://47.244.37.23:8989'
-        self.__rest_root = 'http://' + str(ip) + str(':8989')
+        self.__rest_root = 'http://' + str(ip) + str(':8888')
         # self.__rest_root = "http://lFocalhost:8989"
         self.get_account()
         self.check_all_position()
@@ -35,8 +34,7 @@ class MT4Account:
         :return: 账户信息
         """
         try:
-            ret = self.req.get(self.__rest_root + mt4_account + self.account, timeout=5).json()
-            self.req.close()
+            ret = requests.get(self.__rest_root + mt4_account + self.account, timeout=5).json()
             msg = self.__dispose_info(ret)
             if msg:
                 self.balance = msg['balance']  # 账户余额
@@ -68,8 +66,7 @@ class MT4Account:
         :return: 未成交订单列表
         """
         try:
-            ret = self.req.get(self.__rest_root + mt4_order + self.account, timeout=5).json()
-            self.req.close()
+            ret = requests.get(self.__rest_root + mt4_order + self.account, timeout=5).json()
             order_list = self.__dispose_info(ret)
             if order_list:
                 un_bargain_order_list = [order for order in order_list if
@@ -92,8 +89,7 @@ class MT4Account:
         :return: 已成交订单列表
         """
         try:
-            ret = self.req.get(self.__rest_root + mt4_order + self.account, timeout=5).json()
-            self.req.close()
+            ret = requests.get(self.__rest_root + mt4_order + self.account, timeout=5).json()
             order_list = self.__dispose_info(ret)
             if order_list:
                 traded_order = [order for order in order_list if order['type']['val'] == 1 or order['type']['val'] == 0]
@@ -113,8 +109,7 @@ class MT4Account:
         :return: 订单信息
         """
         try:
-            ret = self.req.get(self.__rest_root + mt4_order + self.account, timeout=5).json()
-            self.req.close()
+            ret = requests.get(self.__rest_root + mt4_order + self.account, timeout=5).json()
             order_list = self.__dispose_info(ret)
             if order_list:
                 for order in order_list:
@@ -129,8 +124,7 @@ class MT4Account:
 
     def check_all_position(self):
         try:
-            ret = self.req.get(self.__rest_root + mt4_order + self.account, timeout=5).json()
-            self.req.close()
+            ret = requests.get(self.__rest_root + mt4_order + self.account, timeout=5).json()
             order_list = self.__dispose_info(ret)
             if order_list:
                 self.pos = {}
@@ -201,8 +195,7 @@ class MT4Account:
         parmes['takeprofit'] = take_profit
         parmes['magic'] = magic
         try:
-            ret = self.req.post(self.__rest_root + mt4_add_order + self.account, json=parmes, timeout=5).json()
-            self.req.close()
+            ret = requests.post(self.__rest_root + mt4_add_order + self.account, json=parmes, timeout=5).json()
             print(ret)
             ret = self.__dispose_info(ret)
             if ret:
@@ -258,8 +251,7 @@ class MT4Account:
                 'slippage': slippage,
                 'arrowColor': arrow_color,
             }
-            ret = self.req.post(self.__rest_root + mt4_close_a_order + self.account, json=parmes, timeout=5).json()
-            self.req.close()
+            ret = requests.post(self.__rest_root + mt4_close_a_order + self.account, json=parmes, timeout=5).json()
             msg = self.__dispose_info(ret)
             # 确认订单 是否被撤掉
             if msg:
@@ -303,8 +295,7 @@ class MT4Account:
         :return: {订单号：true}
         """
         try:
-            ret = self.req.get(self.__rest_root + mt4_close_all_order + self.account, timeout=5).json()
-            self.req.close()
+            ret = requests.get(self.__rest_root + mt4_close_all_order + self.account, timeout=5).json()
             msg = self.__dispose_info(ret)
             # print(msg)
             # print(type(msg))
@@ -335,9 +326,8 @@ class MT4Account:
         :return: true
         """
         try:
-            ret = self.req.get(self.__rest_root + mt4_delete_unset_order + self.account + '/' + str(order_id),
+            ret = requests.get(self.__rest_root + mt4_delete_unset_order + self.account + '/' + str(order_id),
                                timeout=5).json()
-            self.req.close()
             # print(ret)
             return self.__dispose_info(ret)
         except Exception as e:
@@ -350,8 +340,7 @@ class MT4Account:
         :return:  {订单号：true}
         """
         try:
-            ret = self.req.get(self.__rest_root + mt4_order + self.account, timeout=5).json()
-            self.req.close()
+            ret = requests.get(self.__rest_root + mt4_order + self.account, timeout=5).json()
             order_list = self.__dispose_info(ret)
         except Exception as e:
             self.logger.error('账号：' + str(self.account) + str(e))
@@ -379,8 +368,7 @@ class MT4Account:
         :return: {买一, 卖一, 时间}
         """
         try:
-            ret = self.req.get(self.__rest_root + mt4_market_msg + self.account + '/' + symbol, timeout=5).json()
-            self.req.close()
+            ret = requests.get(self.__rest_root + mt4_market_msg + self.account + '/' + symbol, timeout=5).json()
             print(ret)
             msg = self.__dispose_info(ret)
             if msg:

@@ -83,6 +83,7 @@ class Account:
                 for proCode in self.pos.keys():
                     self.subscription(proCode)
             ret = requests.get(self.__rest_root + sp_account + "{}".format(self.account), timeout=5).json()
+            print(ret,"1111")
             msg = self.__dispose_info(ret)
             # self.logger.info('账号：' + str(self.account) + msg)
             if msg:

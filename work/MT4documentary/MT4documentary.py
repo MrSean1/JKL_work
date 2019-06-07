@@ -40,9 +40,10 @@ def mt4_send_email(msg, title):
 
 
 class MainAccount(MT4Account):
-    def __init__(self, account, ip):
+    def __init__(self, account, ip, server):
         MT4Account.__init__(self, account, ip)
         self.logger = logging.getLogger('MainAccount ' + str(account))
+        self.server = server
         self.count = 0
 
     def check_update(self):
@@ -62,7 +63,8 @@ class MainAccount(MT4Account):
                     else:
                         # 说明存在挂单  非市价交易订单
                         pass
-                    ret[order_id] = {'volume': volume, 'symbol': symbol, 'order_type': order_type}
+                    ret[order_id] = {'volume': volume, 'symbol': symbol, 'order_type': order_type,
+                                     'server': self.server}
                     if self.count % 60 == 0:
                         self.logger.info('主账户: {} 订单信息：{}'.format(self.account, ret))
                         self.count = 1
@@ -79,9 +81,10 @@ class MainAccount(MT4Account):
 
 
 class FallowAccount(MT4Account):
-    def __init__(self, account, ip):
+    def __init__(self, account, ip, server):
         MT4Account.__init__(self, account, ip)
-        self.old_pos = dict()
+        self.server = server  # 账号所属平台
+        self.old_pos = dict()  # 主账户老的订单信息
         self.t_start = datetime.datetime.now()
         # 第一次进入时为False 之后转为True
         self.count_signal = False  # 此信号可以判断第几次进入交易  第一次进入交易时将主账户的订单情况存储在self.ole_pos中， 用于判断仓位的变化
@@ -94,6 +97,11 @@ class FallowAccount(MT4Account):
         self.m_pos = 0
         self.logger_count = 0
         self.cal_order_quantity = CalOrderQty(account)
+        self.read_server_stock()
+
+    def read_server_stock(self):
+        df = pd.read_csv('correspond_stock.csv')
+        self.correspond_stock = df
 
     def fallow_add_order(self, ret, slippage=5, stop_loss=0, take_profit=0, magic=0, last_data=None):
         """
@@ -181,8 +189,32 @@ class FallowAccount(MT4Account):
                     for order_id in unusual_order_id:
                         if order_id not in self.old_pos.keys() and order_id in m_account_order_info.keys():
                             # 新增的订单
-                            self.logger.info("主账户做了下单操作")
-                            self.m_acc_add_order_info.append((order_id, m_account_order_info[order_id]))
+                            # 根据平台名称  及对应股票列表 判断该副账户是否需要跟单
+                            m_acc_server = m_account_order_info[order_id]['server']
+                            m_acc_symbol = m_account_order_info[order_id]['symbol']
+                            if self.server == m_acc_server:
+                                self.m_acc_add_order_info.append((order_id, m_account_order_info[order_id]))
+                                self.logger.info("主账户做了下单操作，品种名称为：{}，主副账户为同一平台，更新下单信息成功")
+                            else:
+                                # 判断是否在 对应股票列表里面
+                                if m_acc_symbol in self.correspond_stock[m_acc_server].tolist():
+                                    if pd.isnull(self.correspond_stock[
+                                                     self.correspond_stock[m_acc_server] == m_acc_symbol].item()):
+                                        # 是TRUE的话 就不应该更新信号
+                                        self.logger.info(
+                                            '副账户：{}，所属平台：{}没有主账户所在平台对应股票，主账户订单信息：{}'.format(self.account, self.server,
+                                                                                            m_account_order_info))
+                                    else:
+                                        # FALSE 说明副账户存在和主账户对应的股票
+                                        f_symbol = self.correspond_stock[
+                                            self.correspond_stock[m_acc_server] == m_acc_symbol].item()
+                                        f_acc_order_info = m_account_order_info[order_id]
+                                        f_acc_order_info['symbol'] = f_symbol
+                                        self.m_acc_add_order_info.append((order_id, f_acc_order_info))
+                                        self.logger.info(
+                                            '副账户：{}，所属平台：{}该平台存在对应股票，主账户订单信息：{}'.format(self.account, self.server,
+                                                                                            m_account_order_info))
+
                         elif order_id in self.old_pos.keys() and order_id not in m_account_order_info.keys():
                             # 订单被撤掉
                             self.logger.info("主账户做了平仓操作")
@@ -252,8 +284,8 @@ class FallowAccount(MT4Account):
                             comm_f_order_info = order_info.pop(0)
                             ret = self.fallow_delete_order(order_id=comm_f_order_info[0],
                                                            volume=comm_f_order_info[1]['volume'])
-                            msg = "账户：{}， 平仓操作结果：{}， ".format(self.account, ret)
-                            title = "MT4 跟单软件 平仓"
+                            # msg = "账户：{}， 平仓操作结果：{}， ".format(self.account, ret)
+                            # title = "MT4 跟单软件 平仓"
                             # mt4_send_email(msg, title)
                             if ret[1] is not True:
                                 """
@@ -263,7 +295,7 @@ class FallowAccount(MT4Account):
                                                                                     ret)
                                 self.logger.error(msg)
                                 title = 'MT4 跟单系统，副账户平仓失败'
-                                # mt4_send_email(msg, title)
+                                mt4_send_email(msg, title)
                             else:
                                 # 删除掉订单对应表中记录的订单
                                 print(
@@ -312,9 +344,6 @@ class FallowAccount(MT4Account):
                         batch_order_info = self.total_add_order_info.pop(0)
                         # order_info[1]['volume'] = batch_order_info
                         f_order_id = self.fallow_add_order(batch_order_info)
-                        # msg = '账户：{}， 跟单账户所下订单：{},'.format(self.account, f_order_id)
-                        # title = "MT4 跟单系统跟单情况"
-                        # mt4_send_email(msg, title)
                         if type(f_order_id) is int:
                             print('账户：{} 下单ID:{}'.format(self.account, f_order_id))
                             f_add_order_ret_list.append([f_order_id, batch_order_info])

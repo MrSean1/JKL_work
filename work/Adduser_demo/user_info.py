@@ -2,6 +2,19 @@ import requests
 
 # account = [30266263, 30266262, 30268]
 
+# sp
+
+p = {
+    "userId": "1001524404",
+    "accNo": "1001524404",
+    "host": "14.136.212.168",
+    "appId": "QVSR",
+    "licence": "IH83N1IC37G445KZ3",
+    "password": "628883"
+}
+ret = requests.post("http://47.75.194.25:8081/addUser", json=p)
+c = 'B0291F296F77054360BE016AABF6DF17'
+
 # 福汇测试账户
 dic = {
     "account": 96109442,
@@ -78,14 +91,9 @@ dic = {
 
 a = requests.post("http://47.75.194.25:8989/addAccount", json=dic)
 
-
 # ADSS
 ip = '35.177.25.61'
-dic = {
-    "account": 222057151,
-    "password": "asm123123.",
-    "broker": "ADSS-Live1"
-}
+a
 ip = '35.178.11.110'
 dic = {
     "account": 222057267,
@@ -258,7 +266,6 @@ dic = {
     "broker": "SimpleFX-LiveUK"
 }
 
-
 # ThinkForexAU-Live
 
 dic = {
@@ -274,6 +281,16 @@ dic = {
 dic = {
     "account": 9767128,
     "password": "0FYykEaf",
+    "broker": "ThinkForexAU-Live"
+}
+dic = {
+    "account": 9764782,
+    "password": "qq010203",
+    "broker": "ThinkForexAU-Live"
+}
+dic = {
+    "account": 9765714,
+    "password": "qq010203",
     "broker": "ThinkForexAU-Live"
 }
 
@@ -383,3 +400,157 @@ dic = {
     "password": "pyPNJh1W",
     "broker": "ICMarkets-MT5"
 }
+
+# IC demo
+dic = {
+    "account": 50093009,
+    "password": "cAxaP1pG",
+    "broker": "5*207.246.127.101:1950"
+}
+dic = {
+    "account": 50093013,
+    "password": "HZK2MwBn",
+    "broker": "5*207.246.127.101:1950"
+}
+dic = {
+    "account": 50093012,
+    "password": "Ljc6YMw6",
+    "broker": "5*207.246.127.101:1950"
+}
+dic = {
+    "account": 50095716,
+    "password": "DPyVsxba",
+    "broker": "5*207.246.127.101:1950"
+}
+dic = {
+    "account": 50095717,
+    "password": "Y6zkq92u",
+    "broker": "5*207.246.127.101:1950"
+}
+dic = {
+    "account": 50095718,
+    "password": "7h26pBdi",
+    "broker": "5*207.246.127.101:1950"
+}
+dic = {
+    "account": 50095719,
+    "password": "LtbMLCcE",
+    "broker": "5*207.246.127.101:1950"
+}
+dic = {
+    "account": 50095720,
+    "password": "bg9Rs9Qy",
+    "broker": "5*207.246.127.101:1950"
+}
+dic = {
+    "account": 50095721,
+    "password": "XI9bwJxF",
+    "broker": "5*207.246.127.101:1950"
+}
+dic = {
+    "account": 50095722,
+    "password": "YkTCk7ZM",
+    "broker": "5*207.246.127.101:1950"
+}
+dic = {
+    "account": 50095723,
+    "password": "tRdjBNmC",
+    "broker": "5*207.246.127.101:1950"
+}
+
+import time
+
+a = ['VRTX',
+     'TLRY',
+     'ADP',
+     'CME',
+     'MAR',
+     'DISH',
+     'ADI',
+     'AMGN',
+     'TMUS',
+     'FOX',
+     'CSX',
+     'PEP',
+     'TXN',
+     'CTSH',
+     'PYPL',
+     'EA',
+     'MDLZ',
+     'GILD',
+     'WBA',
+     'SBUX',
+     'CELG',
+     'FOXA',
+     'AMAT',
+     'CRON', ]
+t = list()
+for i in range(5):
+    for j in a:
+        t1 = time.time()
+        info = dict()
+        info['operation'] = 'stock'
+        info['opera'] = j
+        ret = requests.post("http://47.75.151.240:8009/share/buy_shares/", data=info).json()
+        if ret['msg'] == '写入文件成功':
+            print('写入成功')
+        else:
+            print('失败了')
+        while True:
+            ret2 = requests.post("http://47.75.151.240:8009/share/check_info/", data=info).json()
+            if ret2['msg'] == '信息存在':
+                continue
+            else:
+                print(ret2)
+                break
+        t2 = time.time()
+        t3 = t2 - t1
+        print(t3)
+        t.append(t3)
+
+# 挂单方式
+info = {'method': 'buy', 'operation': 'CHFJPY', 'number': '100', 'price': '160.55', }
+requests.post("http://47.75.151.240:8009/share/buy_shares/", data=info).json()
+# 查询是否挂完
+info = {'method': 'buy', 'operation': 'ADP.NAS', 'number': '100', 'price': '160.55', }
+requests.post("http://47.75.151.240:8009/share/check_info/", data=info).json()
+# 撤销挂单
+info = {"share": "CME", "param": "182"}
+requests.post("http://47.75.151.240:8009/share/buy_shares/", data=info).json()
+# 查询是否挂完
+info = {"share": "CME", "param": "182"}
+requests.post("http://47.75.151.240:8009/share/check_info/", data=info).json()
+
+import requests
+import time
+
+t1 = time.time()
+info = {'method': 'sell', 'operation': 'BTCUSD', 'number': '100', 'price': '8100'}
+result = requests.post("http://47.75.151.240:8009/share/buy_shares/", data=info).json()
+print(result)
+while True:
+    ret = requests.post("http://47.75.151.240:8009/share/check_info/", data=info).json()
+    if ret['msg'] == '文件不存在':
+        print(ret)
+        break
+    else:
+        continue
+t2 = time.time()
+print(t2 - t1)
+
+import requests
+import time
+
+t1 = time.time()
+info = {"share": "cancle", 'param': '123354'}
+result = requests.post("http://47.75.151.240:8009/share/buy_shares/", data=info).json()
+print(result)
+while True:
+    ret = requests.post("http://47.75.151.240:8009/share/check_info/", data=info).json()
+    if ret['msg'] == '文件不存在':
+        print(ret)
+        break
+    else:
+        continue
+t2 = time.time()
+print(t2 - t1)
